@@ -1,7 +1,8 @@
 import '../App.css';
 import Header from './header';
-import Home from './Pages/home'
+// import Home from './pages/home'
 import Footer from './footer';
+import CountdownTimer from './pages/hometest';
 
 export default function Index(){
     return<>
@@ -9,7 +10,9 @@ export default function Index(){
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         <Header/>
-        <Home/>   
+        {/* <Home/>    */}
+        <CountdownTimer/>
         <Footer/>   
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     </>
 }
