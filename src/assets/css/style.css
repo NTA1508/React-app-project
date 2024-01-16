@@ -1040,9 +1040,7 @@ header {
     right: 10px;
     cursor: pointer;
 }
-#togglePassword img{
-    max-width: 20px;
-}
+
 .form-button {
     width: 100%;
     height: 50px;

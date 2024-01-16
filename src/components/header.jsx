@@ -9,7 +9,6 @@ export default function Header() {
 
     return (
         <>
-
             <div class="hunter">
                 <p>
                     <span>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</span>
