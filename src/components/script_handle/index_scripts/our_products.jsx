@@ -1,7 +1,7 @@
 import React from 'react';
 import product from '../../data/data';
 
-const TodaysProducts = () => {
+const OurProducts = () => {
   const productsArray = Array.isArray(product) ? product : [];
 
   const productDivs = [];
@@ -52,7 +52,7 @@ const TodaysProducts = () => {
 
     count++;
     // If count reaches 4 or it's the last product, add the .swiper-slide.todays-slide__item to the page
-    if (count === 4 || index === productsArray.length - 1) {
+    if (count === 8 || index === productsArray.length - 1) {
       const productDiv = (
         <div key={index} className="swiper-slide todays-slide__item">
           {productChildren}
@@ -64,7 +64,7 @@ const TodaysProducts = () => {
   });
 
   // Render the productDivs in the component
-  return <div id="todaysList" className="swiper-wrapper">{productDivs}</div>;
+  return <div className="swiper-wrapper" id="productList">{productDivs}</div>;
 };
 
-export default TodaysProducts;
+export default OurProducts;
