@@ -10,7 +10,7 @@ let product = [
             imageFive: "product-1e.png"
         },
         discountSale: "-38%",
-        peiceNew: 120,
+        priceNew: 120,
         priceOld: 160,
         address: "Hà Nội",
         describe: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ut omnis perferendis, ipsum nostrum voluptas saepe repellat dolore minus. Sit neque dolorem sapiente temporibus, fugiat nam a velit pariatur. Recusandae, eum laborum deserunt ut consectetur, maxime at harum, assumenda pariatur blanditiis soluta? Nisi quam non magnam at eligendi sequi quas ex veniam libero molestiae eveniet, tempora ipsam laborum voluptatem voluptas, debitis quidem tenetur saepe dicta fugiat quasi! Molestias officiis omnis quae? Repellat saepe iusto tempore quos reprehenderit quia sunt. Incidunt tempore error odio."
@@ -26,7 +26,7 @@ let product = [
             imageFive: "product-1e.png"
         },
         discountSale: "-38%",
-        peiceNew: 120,
+        priceNew: 120,
         priceOld: 160,
         address: "Hà Nội",
         describe: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ut omnis perferendis, ipsum nostrum voluptas saepe repellat dolore minus. Sit neque dolorem sapiente temporibus, fugiat nam a velit pariatur. Recusandae, eum laborum deserunt ut consectetur, maxime at harum, assumenda pariatur blanditiis soluta? Nisi quam non magnam at eligendi sequi quas ex veniam libero molestiae eveniet, tempora ipsam laborum voluptatem voluptas, debitis quidem tenetur saepe dicta fugiat quasi! Molestias officiis omnis quae? Repellat saepe iusto tempore quos reprehenderit quia sunt. Incidunt tempore error odio."
@@ -42,7 +42,7 @@ let product = [
             imageFive: "product-1e.png"
         },
         discountSale: "-38%",
-        peiceNew: 120,
+        priceNew: 120,
         priceOld: 160,
         address: "Hà Nội",
         describe: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ut omnis perferendis, ipsum nostrum voluptas saepe repellat dolore minus. Sit neque dolorem sapiente temporibus, fugiat nam a velit pariatur. Recusandae, eum laborum deserunt ut consectetur, maxime at harum, assumenda pariatur blanditiis soluta? Nisi quam non magnam at eligendi sequi quas ex veniam libero molestiae eveniet, tempora ipsam laborum voluptatem voluptas, debitis quidem tenetur saepe dicta fugiat quasi! Molestias officiis omnis quae? Repellat saepe iusto tempore quos reprehenderit quia sunt. Incidunt tempore error odio."
@@ -58,7 +58,7 @@ let product = [
             imageFive: "product-1e.png"
         },
         discountSale: "-38%",
-        peiceNew: 120,
+        priceNew: 120,
         priceOld: 160,
         address: "Hà Nội",
         describe: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ut omnis perferendis, ipsum nostrum voluptas saepe repellat dolore minus. Sit neque dolorem sapiente temporibus, fugiat nam a velit pariatur. Recusandae, eum laborum deserunt ut consectetur, maxime at harum, assumenda pariatur blanditiis soluta? Nisi quam non magnam at eligendi sequi quas ex veniam libero molestiae eveniet, tempora ipsam laborum voluptatem voluptas, debitis quidem tenetur saepe dicta fugiat quasi! Molestias officiis omnis quae? Repellat saepe iusto tempore quos reprehenderit quia sunt. Incidunt tempore error odio."
@@ -74,7 +74,7 @@ let product = [
             imageFive: "product-1e.png"
         },
         discountSale: "-38%",
-        peiceNew: 120,
+        priceNew: 120,
         priceOld: 160,
         address: "Hà Nội",
         describe: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ut omnis perferendis, ipsum nostrum voluptas saepe repellat dolore minus. Sit neque dolorem sapiente temporibus, fugiat nam a velit pariatur. Recusandae, eum laborum deserunt ut consectetur, maxime at harum, assumenda pariatur blanditiis soluta? Nisi quam non magnam at eligendi sequi quas ex veniam libero molestiae eveniet, tempora ipsam laborum voluptatem voluptas, debitis quidem tenetur saepe dicta fugiat quasi! Molestias officiis omnis quae? Repellat saepe iusto tempore quos reprehenderit quia sunt. Incidunt tempore error odio."
@@ -90,7 +90,7 @@ let product = [
             imageFive: "product-1e.png"
         },
         discountSale: "-38%",
-        peiceNew: 120,
+        priceNew: 120,
         priceOld: 160,
         address: "Hà Nội",
         describe: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ut omnis perferendis, ipsum nostrum voluptas saepe repellat dolore minus. Sit neque dolorem sapiente temporibus, fugiat nam a velit pariatur. Recusandae, eum laborum deserunt ut consectetur, maxime at harum, assumenda pariatur blanditiis soluta? Nisi quam non magnam at eligendi sequi quas ex veniam libero molestiae eveniet, tempora ipsam laborum voluptatem voluptas, debitis quidem tenetur saepe dicta fugiat quasi! Molestias officiis omnis quae? Repellat saepe iusto tempore quos reprehenderit quia sunt. Incidunt tempore error odio."
@@ -106,7 +106,7 @@ let product = [
             imageFive: "product-1e.png"
         },
         discountSale: "-38%",
-        peiceNew: 120,
+        priceNew: 120,
         priceOld: 160,
         address: "Hà Nội",
         describe: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ut omnis perferendis, ipsum nostrum voluptas saepe repellat dolore minus. Sit neque dolorem sapiente temporibus, fugiat nam a velit pariatur. Recusandae, eum laborum deserunt ut consectetur, maxime at harum, assumenda pariatur blanditiis soluta? Nisi quam non magnam at eligendi sequi quas ex veniam libero molestiae eveniet, tempora ipsam laborum voluptatem voluptas, debitis quidem tenetur saepe dicta fugiat quasi! Molestias officiis omnis quae? Repellat saepe iusto tempore quos reprehenderit quia sunt. Incidunt tempore error odio."
@@ -122,7 +122,7 @@ let product = [
             imageFive: "product-1e.png"
         },
         discountSale: "-38%",
-        peiceNew: 120,
+        priceNew: 120,
         priceOld: 160,
         address: "Hà Nội",
         describe: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ut omnis perferendis, ipsum nostrum voluptas saepe repellat dolore minus. Sit neque dolorem sapiente temporibus, fugiat nam a velit pariatur. Recusandae, eum laborum deserunt ut consectetur, maxime at harum, assumenda pariatur blanditiis soluta? Nisi quam non magnam at eligendi sequi quas ex veniam libero molestiae eveniet, tempora ipsam laborum voluptatem voluptas, debitis quidem tenetur saepe dicta fugiat quasi! Molestias officiis omnis quae? Repellat saepe iusto tempore quos reprehenderit quia sunt. Incidunt tempore error odio."
@@ -138,7 +138,7 @@ let product = [
             imageFive: "product-1e.png"
         },
         discountSale: "-38%",
-        peiceNew: 120,
+        priceNew: 120,
         priceOld: 160,
         address: "Hà Nội",
         describe: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ut omnis perferendis, ipsum nostrum voluptas saepe repellat dolore minus. Sit neque dolorem sapiente temporibus, fugiat nam a velit pariatur. Recusandae, eum laborum deserunt ut consectetur, maxime at harum, assumenda pariatur blanditiis soluta? Nisi quam non magnam at eligendi sequi quas ex veniam libero molestiae eveniet, tempora ipsam laborum voluptatem voluptas, debitis quidem tenetur saepe dicta fugiat quasi! Molestias officiis omnis quae? Repellat saepe iusto tempore quos reprehenderit quia sunt. Incidunt tempore error odio."
@@ -154,7 +154,7 @@ let product = [
             imageFive: "product-1e.png"
         },
         discountSale: "-38%",
-        peiceNew: 120,
+        priceNew: 120,
         priceOld: 160,
         address: "Hà Nội",
         describe: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ut omnis perferendis, ipsum nostrum voluptas saepe repellat dolore minus. Sit neque dolorem sapiente temporibus, fugiat nam a velit pariatur. Recusandae, eum laborum deserunt ut consectetur, maxime at harum, assumenda pariatur blanditiis soluta? Nisi quam non magnam at eligendi sequi quas ex veniam libero molestiae eveniet, tempora ipsam laborum voluptatem voluptas, debitis quidem tenetur saepe dicta fugiat quasi! Molestias officiis omnis quae? Repellat saepe iusto tempore quos reprehenderit quia sunt. Incidunt tempore error odio."
@@ -170,7 +170,7 @@ let product = [
             imageFive: "product-1e.png"
         },
         discountSale: "-38%",
-        peiceNew: 120,
+        priceNew: 120,
         priceOld: 160,
         address: "Hà Nội",
         describe: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ut omnis perferendis, ipsum nostrum voluptas saepe repellat dolore minus. Sit neque dolorem sapiente temporibus, fugiat nam a velit pariatur. Recusandae, eum laborum deserunt ut consectetur, maxime at harum, assumenda pariatur blanditiis soluta? Nisi quam non magnam at eligendi sequi quas ex veniam libero molestiae eveniet, tempora ipsam laborum voluptatem voluptas, debitis quidem tenetur saepe dicta fugiat quasi! Molestias officiis omnis quae? Repellat saepe iusto tempore quos reprehenderit quia sunt. Incidunt tempore error odio."
@@ -186,7 +186,7 @@ let product = [
             imageFive: "product-1e.png"
         },
         discountSale: "-38%",
-        peiceNew: 120,
+        priceNew: 120,
         priceOld: 160,
         address: "Hà Nội",
         describe: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ut omnis perferendis, ipsum nostrum voluptas saepe repellat dolore minus. Sit neque dolorem sapiente temporibus, fugiat nam a velit pariatur. Recusandae, eum laborum deserunt ut consectetur, maxime at harum, assumenda pariatur blanditiis soluta? Nisi quam non magnam at eligendi sequi quas ex veniam libero molestiae eveniet, tempora ipsam laborum voluptatem voluptas, debitis quidem tenetur saepe dicta fugiat quasi! Molestias officiis omnis quae? Repellat saepe iusto tempore quos reprehenderit quia sunt. Incidunt tempore error odio."
