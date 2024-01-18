@@ -72,7 +72,7 @@ export default function ProductCate() {
                     <div className="wishlist-wrap">
                         <div className="wishlist-list">
                             <div className="product-item">
-                                <a href="#">
+                                <a href="/detail">
                                     <div className="product-item__img">
                                         <img src="./assets/images/product-1a.png" alt="product-img" />
                                         <button className="add-cart" type="button">
@@ -98,7 +98,7 @@ export default function ProductCate() {
                                         className="product-tl__button product-button__eye"
                                         type="button"
                                     >
-                                        <i className="bi bi-eye" />
+                                        <a href='/detail' style={{color:"black"}}><i className="bi bi-eye"></i></a>
                                     </button>
                                 </div>
                             </div>
