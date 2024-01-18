@@ -2,8 +2,13 @@ import '../App.css';
 import Header from './header';
 import Home from './pages/home'
 import Footer from './footer';
-import CountdownTimer from './pages/hometest';
 import Contact from './pages/contact';
+import AboutUs from './pages/about';
+import Cart from './pages/cart';
+import CheckOut from './pages/checkout';
+import ProductDetail from './pages/prodcut_detals';
+import WishList from './pages/wishlist';
+import Phones from './pages/products_categories/phones';
 
 export default function Index(){
     return<>
@@ -11,8 +16,14 @@ export default function Index(){
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         <Header/>
-        {/* <Home/>    */}
-        <Contact/>
+        <Home/>   
+        {/* <Contact/> */}
+        {/* <AboutUs/> */}
+        {/* <Cart/> */}
+        {/* <CheckOut/> */}
+        {/* <ProductDetail/> */}
+        {/* <WishList/> */}
+        {/* <Phones/> */}
         <Footer/>   
     </>
 }

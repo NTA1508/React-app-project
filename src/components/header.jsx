@@ -65,8 +65,8 @@ export default function Header() {
                             <a className="sidebar-item" href="./about.html">
                                 About
                             </a>
-                            <a className="sidebar-item" href="./register.html">
-                                Sign Up
+                            <a className="sidebar-item" href="./login.html">
+                                Login
                             </a>
                         </div>
                         <div className="tools-list">
