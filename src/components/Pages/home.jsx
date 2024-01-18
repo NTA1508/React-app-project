@@ -1,7 +1,5 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component } from 'react';
 import CountdownTimer from '../script_handle/index_scripts/countdowntimer';
-// import CountdownBannerTimer from '../script_handle/index_scripts/banner_time';
-// import TodaysProducts from '../script_handle/index_scripts/get_products';
 import ToDaySlide from '../script_handle/index_scripts/today_slide';
 import HeroSlide from '../script_handle/index_scripts/hero_slide';
 import MonthList from '../script_handle/index_scripts/get_month';
@@ -17,64 +15,57 @@ class Home extends Component {
               <div className="category">
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="#">
-                      <p>Woman's Fashion</p>
+                    <a href="/products">
+                      <p>Mobile phones</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="#">
-                      <p>Men's Fashion</p>
+                    <a href="/products">
+                      <p>Laptops and Tablets</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="#">
-                      <p>Electronics</p>
+                    <a href="/products">
+                      <p>Televisions and Monitors</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="#">
-                      <p>Home &amp; Lifestyle</p>
+                    <a href="/products">
+                      <p>Audio and Headphones</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="#">
-                      <p>Medicine</p>
+                    <a href="/products">
+                      <p>Cameras and Camcorders</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="#">
-                      <p>Sports &amp; Outdoor</p>
+                    <a href="/products">
+                      <p>Game consoles</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="#">
-                      <p>Baby's &amp; Toys</p>
+                    <a href="/products">
+                      <p>Printers and Scanners</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="#">
-                      <p>Groceries &amp; Pets</p>
-                    </a>
-                  </div>
-                </div>
-                <div className="category-item">
-                  <div className="menu-title">
-                    <a href="#">
-                      <p>Health &amp; Beauty</p>
+                    <a href="/products">
+                      <p>Smart home appliances</p>
                     </a>
                   </div>
                 </div>
@@ -210,7 +201,7 @@ class Home extends Component {
               <h3>Lorem ipsum dolor sit amet.</h3>
               <i className="bx bx-x close-image" />
             </div>
-            <img src="./assets/images/product-2a.png" alt="image" />
+            <img src="../assets/images/product-2a.png" alt="image" />
           </div>
         </div>
         {/* end */}
