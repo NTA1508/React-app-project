@@ -15,56 +15,56 @@ class Home extends Component {
               <div className="category">
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="#">
+                    <a href="/products">
                       <p>Mobile phones</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="#">
+                    <a href="/products">
                       <p>Laptops and Tablets</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="#">
+                    <a href="/products">
                       <p>Televisions and Monitors</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="#">
+                    <a href="/products">
                       <p>Audio and Headphones</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="#">
+                    <a href="/products">
                       <p>Cameras and Camcorders</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="#">
+                    <a href="/products">
                       <p>Game consoles</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="#">
+                    <a href="/products">
                       <p>Printers and Scanners</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="#">
+                    <a href="/products">
                       <p>Smart home appliances</p>
                     </a>
                   </div>

@@ -2,16 +2,11 @@ import React from 'react';
 
 const ChangeImage = () => {
   const changeImage = (element) => {
-    // Remove 'active' class from all items
     const smallImages = document.querySelectorAll('.item-img-small');
     smallImages.forEach((img) => {
       img.classList.remove('active');
     });
-
-    // Add 'active' class to the clicked item
     element.classList.add('active');
-
-    // Get the source of the clicked image and set it as the source for the big image
     const imgSrc = element.querySelector('img').src;
     document.getElementById('img-big').src = imgSrc;
   };

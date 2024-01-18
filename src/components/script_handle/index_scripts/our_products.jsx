@@ -9,15 +9,12 @@ const OurProducts = () => {
   let count = 0;
 
   productsArray.forEach((item, index) => {
-    // If count reaches 0, create a new .swiper-slide.todays-slide__item
     if (count === 0) {
       productChildren = [];
     }
-
-    // Create a div to hold product information
     const productItem = (
       <div key={item.id} className="product-item">
-        <a href="#">
+        <a href="/detail">
           <div className="product-item__img">
             <img src={`${item.images.imageOne}`} alt="product-img" />
             <button className="add-cart" type="button">
@@ -40,18 +37,15 @@ const OurProducts = () => {
             <i className='bx bx-heart'></i>
           </button>
           <button className="product-tl__button product-button__eye" type="button">
-            <i className="bi bi-eye"></i>
+            <a href='/detail' style={{color:"black"}}><i className="bi bi-eye"></i></a>
           </button>
         </div>
       </div>
       
     );
-
-    // Add the product to the current .swiper-slide.todays-slide__item
     productChildren.push(productItem);
 
     count++;
-    // If count reaches 4 or it's the last product, add the .swiper-slide.todays-slide__item to the page
     if (count === 8 || index === productsArray.length - 1) {
       const productDiv = (
         <div key={index} className="swiper-slide todays-slide__item">
@@ -62,8 +56,6 @@ const OurProducts = () => {
       count = 0;
     }
   });
-
-  // Render the productDivs in the component
   return <div className="swiper-wrapper" id="productList">{productDivs}</div>;
 };
 

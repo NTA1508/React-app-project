@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+import { NavLink } from "react-router-dom";
 export default function Header() {
     const [isMdAccountVisible, setIsMdAccountVisible] = useState(false);
+    const [activeNavItem, setActiveNavItem] = useState(null);
     const accountButtonRef = useRef(null);
     const mdAccountRef = useRef(null);
 
@@ -31,6 +33,10 @@ export default function Header() {
         // Toggle the visibility of #md-account
         setIsMdAccountVisible((prev) => !prev);
     };
+
+    const handleNavItemClick = (navItem) => {
+        setActiveNavItem(navItem);
+    };
     return (
         <>
             <header>
@@ -39,16 +45,8 @@ export default function Header() {
                         <span>
                             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
                         </span>
-                        <a href="#">ShopNow</a>
+                        <a href="/home">ShopNow</a>
                     </p>
-                    <div className="language">
-                        <span>Vietnamese</span>
-                        <i className="bx bx-chevron-down" />
-                        <nav className="language-list">
-                            <div className="language-item">English</div>
-                            <div className="language-item">China</div>
-                        </nav>
-                    </div>
                 </div>
                 <div className="container">
                     <div className="navbar">
@@ -56,18 +54,34 @@ export default function Header() {
                             Exclusive
                         </a>
                         <div className="sidebar">
-                            <a className="sidebar-item" href="/pages/home">
+                            <NavLink
+                                to="/home"
+                                className={`sidebar-item ${activeNavItem === 'home' ? 'active' : ''}`}
+                                onClick={() => handleNavItemClick('home')}
+                            >
                                 Home
-                            </a>
-                            <a className="sidebar-item" href="/pages/contact">
+                            </NavLink>
+                            <NavLink
+                                to="/contact"
+                                className={`sidebar-item ${activeNavItem === 'contact' ? 'active' : ''}`}
+                                onClick={() => handleNavItemClick('contact')}
+                            >
                                 Contact
-                            </a>
-                            <a className="sidebar-item" href="./about.html">
+                            </NavLink>
+                            <NavLink
+                                to="/about"
+                                className={`sidebar-item ${activeNavItem === 'about' ? 'active' : ''}`}
+                                onClick={() => handleNavItemClick('about')}
+                            >
                                 About
-                            </a>
-                            <a className="sidebar-item" href="./login.html">
+                            </NavLink>
+                            <NavLink
+                                to="/login"
+                                className={`sidebar-item ${activeNavItem === 'login' ? 'active' : ''}`}
+                                onClick={() => handleNavItemClick('login')}
+                            >
                                 Login
-                            </a>
+                            </NavLink>
                         </div>
                         <div className="tools-list">
                             <div className="search-nav">
@@ -90,7 +104,7 @@ export default function Header() {
                                     </div>
                                 </div>
                             </div>
-                            <a href="./wishlist.html">
+                            <a href="/wishlist">
                                 <div className="tools-item">
                                     <i className="bx bx-heart" />
                                     <span className="number-icon" id="heart-number">
@@ -98,7 +112,7 @@ export default function Header() {
                                     </span>
                                 </div>
                             </a>
-                            <a href="./cart.html">
+                            <a href="/cart">
                                 <div className="tools-item">
                                     <i className="bx bx-cart-alt" />
                                     <span className="number-icon" id="cart-number">
@@ -114,11 +128,11 @@ export default function Header() {
                                 <div className="md-account" id="md-account"
                                     style={{ display: isMdAccountVisible ? 'block' : 'none' }}
                                     ref={mdAccountRef}>
-                                    <a href="#">
+                                    <a href="/profile">
                                         <i className="bx bx-user" />
                                         <span>Manage My Account</span>
                                     </a>
-                                    <a href="#">
+                                    <a href="/order">
                                         <i className="bx bxs-shopping-bags" />
                                         <span>My Order</span>
                                     </a>

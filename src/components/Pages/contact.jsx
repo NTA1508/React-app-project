@@ -5,7 +5,7 @@ export default function Contact() {
                 <div className="contact-nav">
                     <div className="contact-title">
                         <div className="contact-fix">
-                            <a href="./index.html">Home</a>
+                            <a href="/home">Home</a>
                             &nbsp;/&nbsp;
                             <p>Contact</p>
                         </div>

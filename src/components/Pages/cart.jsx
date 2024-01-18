@@ -5,7 +5,7 @@ export default function Cart() {
                 <div className="wishlist-nav">
                     <div className="contact-title">
                         <div className="contact-fix">
-                            <a href="./index.html">Home</a>
+                            <a href="/home">Home</a>
                             &nbsp;/&nbsp;
                             <p>Cart</p>
                         </div>
@@ -89,7 +89,7 @@ export default function Cart() {
                                     Nhấn "Đặt hàng" đồng nghĩa với việc bạn đồng ý tuân theo{" "}
                                     <a href="#">Điều khoản của Exclusive</a>
                                 </p>
-                                <a href="./checkout.html">
+                                <a href="/checkout">
                                     <button className="order-cart" type="button">
                                         Proceed to payment
                                     </button>

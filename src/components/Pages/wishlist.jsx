@@ -7,7 +7,7 @@ export default function WishList() {
                 <div className="wishlist-nav">
                     <div className="contact-title">
                         <div className="contact-fix">
-                            <a href="./index.html">Home</a>
+                            <a href="/home">Home</a>
                             &nbsp;/&nbsp;
                             <p>Wishlist</p>
                         </div>

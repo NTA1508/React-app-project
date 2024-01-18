@@ -7,20 +7,17 @@ const CountdownTimer = () => {
   const [seconds, setSeconds] = useState('00');
 
   useEffect(() => {
-    // Target elements by id using useRef
     const b_daysElement = document.getElementById("b-days");
     const b_hoursElement = document.getElementById("b-hours");
     const b_minutesElement = document.getElementById("b-minutes");
     const b_secondsElement = document.getElementById("b-seconds");
 
-    // Set the end time for the countdown (e.g., 7 days from now)
     const b_endTime = new Date();
     b_endTime.setDate(b_endTime.getDate() + 7);
     b_endTime.setHours(b_endTime.getHours() + 0);
     b_endTime.setMinutes(b_endTime.getMinutes() + 0);
     b_endTime.setSeconds(b_endTime.getSeconds() + 0);
 
-    // Update countdown every second
     const b_countdownInterval = setInterval(updateCountdown, 1000);
 
     function updateCountdown() {
@@ -28,20 +25,17 @@ const CountdownTimer = () => {
       const timeRemaining = b_endTime - currentTime;
 
       if (timeRemaining <= 0) {
-        // Countdown has ended
         clearInterval(b_countdownInterval);
         setDays('00');
         setHours('00');
         setMinutes('00');
         setSeconds('00');
       } else {
-        // Calculate remaining days, hours, minutes, and seconds
         const daysRemaining = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
         const hoursRemaining = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutesRemaining = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
         const secondsRemaining = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-        // Update state values
         setDays(daysRemaining.toString().padStart(2, "0"));
         setHours(hoursRemaining.toString().padStart(2, "0"));
         setMinutes(minutesRemaining.toString().padStart(2, "0"));
@@ -49,9 +43,8 @@ const CountdownTimer = () => {
       }
     }
 
-    // Cleanup on component unmount
     return () => clearInterval(b_countdownInterval);
-  }, []); // Empty dependency array ensures this effect runs once when the component mounts
+  }, []);
 
   return (
     <section className="section banner">

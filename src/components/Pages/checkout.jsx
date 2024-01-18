@@ -5,9 +5,9 @@ export default function CheckOut() {
                 <div className="contact-nav">
                     <div className="contact-title">
                         <div className="contact-fix">
-                            <a href="./index.html">Home</a>
+                            <a href="/home">Home</a>
                             &nbsp;/&nbsp;
-                            <a href="./cart.html">Cart</a>
+                            <a href="/cart">Cart</a>
                             &nbsp;/&nbsp;
                             <p>CheckOut</p>
                         </div>

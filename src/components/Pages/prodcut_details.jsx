@@ -1,5 +1,4 @@
 import ChangeImage from "../script_handle/index_scripts/product_detail";
-import ChangeColor from "../script_handle/index_scripts/product_detail_color";
 import ProductIncrement from "../script_handle/index_scripts/product_increment";
 
 export default function ProductDetail() {
@@ -9,7 +8,7 @@ export default function ProductDetail() {
                     <div className="wishlist-nav">
                         <div className="contact-title">
                             <div className="contact-fix">
-                                <a href="./index.html">Home</a>
+                                <a href="/home">Home</a>
                                 &nbsp;/&nbsp;
                                 <p>HAVIT HV-G92 Gamepad</p>
                             </div>
@@ -36,7 +35,6 @@ export default function ProductDetail() {
                                     Pressure sensitive.
                                 </p>
                                 <hr />
-                                <ChangeColor/>
                                 <div className="product-nb">
                                     <nav>
                                         <ProductIncrement/>
