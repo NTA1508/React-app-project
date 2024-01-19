@@ -3436,3 +3436,9 @@ footer {
   .category-item.active {
     color: red; /* Change this to the desired text color */
   }
+  .admin_card_hover{
+    transition: 0.3s;
+  }
+  .admin_card_hover:hover {
+    background-color: rgb(230, 229, 229);
+  }

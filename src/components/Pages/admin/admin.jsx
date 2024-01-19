@@ -5,7 +5,7 @@ export default function Admin() {
                 <div style={{width:"100%", textAlign:"center", fontSize:"30px"}}><h4>Hello Admin Name</h4></div>
                 <div style={{ margin: 20 }}>
                     <div style={{ display: "flex", justifyContent: "space-between" }}>
-                        <div className="col-md-3" style={{ width: "23%" }}>
+                        <div className="col-md-3 admin_card_hover" style={{ width: "23%" }}>
                             <a href="/add_product" style={{ color: "black" }}>
                                 <div
                                     style={{
@@ -22,7 +22,7 @@ export default function Admin() {
                                 </div>
                             </a>
                         </div>
-                        <div className="col-md-3" style={{ width: "23%" }}>
+                        <div className="col-md-3 admin_card_hover" style={{ width: "23%" }}>
                             <a href="/all_products" style={{ color: "black" }}>
                                 <div
                                     style={{
@@ -39,7 +39,7 @@ export default function Admin() {
                                 </div>
                             </a>
                         </div>
-                        <div className="col-md-3" style={{ width: "23%" }}>
+                        <div className="col-md-3 admin_card_hover" style={{ width: "23%" }}>
                             <a href="/oders_list" style={{ color: "black" }}>
                                 <div
                                     style={{
@@ -56,7 +56,7 @@ export default function Admin() {
                                 </div>
                             </a>
                         </div>
-                        <div className="col-md-3" style={{ width: "23%" }}>
+                        <div className="col-md-3 admin_card_hover" style={{ width: "23%"}}>
                             <a href="/message" style={{ color: "black" }}>
                                 <div
                                     style={{
