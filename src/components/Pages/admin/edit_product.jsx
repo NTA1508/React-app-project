@@ -34,14 +34,14 @@ export default function EditProduct() {
                             id="inputState"
                             style={{ width: "100%", padding: 8, boxSizing: "border-box" }}
                         >
-                            <option value={"Mobile phones"}>Mobile phones</option>
-                            <option value={"Laptops and Tablets"}>Laptops and Tablets</option>
-                            <option value={"Televisions and Monitors"}>Televisions and Monitors</option>
-                            <option value={"Audio and Headphones"}>Audio and Headphones</option>
-                            <option value={"Cameras and Camcorders"}>Cameras and Camcorders</option>
-                            <option value={"Game consoles"}>Game consoles</option>
-                            <option value={"Printers and Scanners"}>Printers and Scanners</option>
-                            <option value={"Smart home appliance"}>Smart home appliances</option>
+                            <option value={"phones"}>Mobile phones</option>
+                            <option value={"laptops"}>Laptops and Tablets</option>
+                            <option value={"tv"}>Televisions and Monitors</option>
+                            <option value={"audios"}>Audio and Headphones</option>
+                            <option value={"cameras"}>Cameras and Camcorders</option>
+                            <option value={"consoles"}>Game consoles</option>
+                            <option value={"printers"}>Printers and Scanners</option>
+                            <option value={"smart"}>Smart home appliances</option>
                         </select>
                     </div>
                     <div style={{ marginBottom: 20 }}>
