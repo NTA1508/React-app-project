@@ -3433,4 +3433,6 @@ footer {
     color: white;
   }
   
-  
+  .category-item.active {
+    color: red; /* Change this to the desired text color */
+  }

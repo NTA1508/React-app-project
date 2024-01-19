@@ -4,6 +4,13 @@ import ToDaySlide from '../script_handle/index_scripts/today_slide';
 import HeroSlide from '../script_handle/index_scripts/hero_slide';
 import MonthList from '../script_handle/index_scripts/get_month';
 import OurProducts from '../script_handle/index_scripts/our_products';
+import feature1 from "../../assets/image/featured-1.png"
+import feature2 from "../../assets/image/featured-2.png"
+import feature3 from "../../assets/image/featured-3.png"
+import feature4 from "../../assets/image/featured-4.png"
+import deliveryImg from "../../assets/image/icon-delivery.png"
+import customImg from "../../assets/image/Icon-customer_service.png"
+import secureImg from "../../assets/image/Icon-secure.png"
 class Home extends Component {
   render() {
     return (
@@ -113,7 +120,7 @@ class Home extends Component {
               <div className="featured-wrap">
                 <div className="featured-left">
                   <img
-                    src="./assets/images/featured-1.png"
+                    src={feature1}
                     alt=""
                     className="featured-img"
                   />
@@ -126,7 +133,7 @@ class Home extends Component {
                 <div className="featured-right">
                   <div className="featured-item">
                     <img
-                      src="./assets/images/featured-2.png"
+                      src={feature2}
                       alt=""
                       className="featured-img"
                     />
@@ -139,7 +146,7 @@ class Home extends Component {
                   <div className="featured-box">
                     <div className="featured-vid">
                       <img
-                        src="./assets/images/featured-3.png"
+                        src={feature3}
                         alt=""
                         className="featured-img"
                       />
@@ -151,7 +158,7 @@ class Home extends Component {
                     </div>
                     <div className="featured-vid">
                       <img
-                        src="./assets/images/featured-4.png"
+                        src={feature4}
                         alt=""
                         className="featured-img"
                       />
@@ -170,21 +177,21 @@ class Home extends Component {
               <div className="advantage-list">
                 <div className="advantage-item">
                   <div className="advantage-logo">
-                    <img src="./assets/images/icon-delivery.png" alt="" />
+                    <img src={deliveryImg} alt="" />
                   </div>
                   <h3>FREE AND FAST DELIVERY</h3>
                   <p>Free delivery for all orders over $140</p>
                 </div>
                 <div className="advantage-item">
                   <div className="advantage-logo">
-                    <img src="./assets/images/Icon-customer_service.png" alt="" />
+                    <img src={customImg} alt="" />
                   </div>
                   <h3>24/7 CUSTOMER SERVICE</h3>
                   <p>Friendly 24/7 customer support</p>
                 </div>
                 <div className="advantage-item">
                   <div className="advantage-logo">
-                    <img src="./assets/images/Icon-secure.png" alt="" />
+                    <img src={secureImg} alt="" />
                   </div>
                   <h3>MONEY BACK GUARANTEE</h3>
                   <p>We reurn money within 30 days</p>

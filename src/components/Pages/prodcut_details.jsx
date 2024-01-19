@@ -26,7 +26,7 @@ export default function ProductDetail() {
                                         <i className="bi bi-star-fill" />
                                     </div>
                                     <span>|</span>
-                                    <p>in stock</p>
+                                    <p>in stock: 50</p>
                                 </nav>
                                 <h1>$120</h1>
                                 <p>

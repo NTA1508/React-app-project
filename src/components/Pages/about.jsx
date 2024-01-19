@@ -1,4 +1,8 @@
 import ProfileSlide from "../script_handle/index_scripts/about_slide"
+import storyImage from "../../assets/image/story.png"
+import deliveryImg from "../../assets/image/icon-delivery.png"
+import customImg from "../../assets/image/Icon-customer_service.png"
+import secureImg from "../../assets/image/Icon-secure.png"
 export default function AboutUs() {
     return (
         <div className="container">
@@ -29,7 +33,7 @@ export default function AboutUs() {
                                 </p>
                             </div>
                             <img
-                                src="./assets/images/story.png"
+                                src={storyImage}
                                 alt="story-img"
                                 className="story-img"
                             />
@@ -37,28 +41,28 @@ export default function AboutUs() {
                         <section className="story-list">
                             <div className="story-item">
                                 <div className="advantage-logo">
-                                    <img src="./assets/images/icon-delivery.png" alt="" />
+                                    <img src={deliveryImg} alt="" />
                                 </div>
                                 <h3>10.5k</h3>
                                 <p>Sallers active our site</p>
                             </div>
                             <div className="story-item">
                                 <div className="advantage-logo">
-                                    <img src="./assets/images/icon-delivery.png" alt="" />
+                                <img src={deliveryImg} alt="" />
                                 </div>
                                 <h3>10.5k</h3>
                                 <p>Sallers active our site</p>
                             </div>
                             <div className="story-item">
                                 <div className="advantage-logo">
-                                    <img src="./assets/images/icon-delivery.png" alt="" />
+                                <img src={deliveryImg} alt="" />
                                 </div>
                                 <h3>10.5k</h3>
                                 <p>Sallers active our site</p>
                             </div>
                             <div className="story-item">
                                 <div className="advantage-logo">
-                                    <img src="./assets/images/icon-delivery.png" alt="" />
+                                <img src={deliveryImg} alt="" />
                                 </div>
                                 <h3>10.5k</h3>
                                 <p>Sallers active our site</p>
@@ -70,21 +74,21 @@ export default function AboutUs() {
                             <div className="advantage-list">
                                 <div className="advantage-item">
                                     <div className="advantage-logo">
-                                        <img src="./assets/images/icon-delivery.png" alt="" />
+                                        <img src={deliveryImg} alt="" />
                                     </div>
                                     <h3>FREE AND FAST DELIVERY</h3>
                                     <p>Free delivery for all orders over $140</p>
                                 </div>
                                 <div className="advantage-item">
                                     <div className="advantage-logo">
-                                        <img src="./assets/images/Icon-customer_service.png" alt="" />
+                                        <img src={customImg} alt="" />
                                     </div>
                                     <h3>24/7 CUSTOMER SERVICE</h3>
                                     <p>Friendly 24/7 customer support</p>
                                 </div>
                                 <div className="advantage-item">
                                     <div className="advantage-logo">
-                                        <img src="./assets/images/Icon-secure.png" alt="" />
+                                        <img src={secureImg} alt="" />
                                     </div>
                                     <h3>MONEY BACK GUARANTEE</h3>
                                     <p>We reurn money within 30 days</p>

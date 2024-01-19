@@ -14,7 +14,6 @@ export default function Header() {
                 !accountButtonRef.current.contains(event.target) &&
                 !mdAccountRef.current.contains(event.target)
             ) {
-                // If the click is outside #account and #md-account, hide #md-account
                 setIsMdAccountVisible(false);
             }
         };
@@ -27,10 +26,7 @@ export default function Header() {
     }, []);
 
     const handleAccountButtonClick = (event) => {
-        // Prevent the click event from bubbling up to parent elements
         event.stopPropagation();
-
-        // Toggle the visibility of #md-account
         setIsMdAccountVisible((prev) => !prev);
     };
 
@@ -81,6 +77,13 @@ export default function Header() {
                                 onClick={() => handleNavItemClick('login')}
                             >
                                 Login
+                            </NavLink>
+                            <NavLink
+                                to="/admin"
+                                className={`sidebar-item ${activeNavItem === 'admin' ? 'active' : ''}`}
+                                onClick={() => handleNavItemClick('admin')}
+                            >
+                                Admin
                             </NavLink>
                         </div>
                         <div className="tools-list">
