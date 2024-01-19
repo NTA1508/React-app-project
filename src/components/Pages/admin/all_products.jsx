@@ -45,7 +45,7 @@ const AllProducts = () => {
                     <a href="#">
                       <i className="bi bi-trash3" />
                     </a>
-                    <a href="#" style={{marginLeft:"10px"}}>
+                    <a href="/edit_product" style={{marginLeft:"10px"}}>
                       <i className="bi bi-pencil-square" />
                     </a>
                   </td>
@@ -66,7 +66,7 @@ const AllProducts = () => {
                     <a href="#">
                       <i className="bi bi-trash3" />
                     </a>
-                    <a href="#" style={{marginLeft:"10px"}}>
+                    <a href="/edit_product" style={{marginLeft:"10px"}}>
                       <i className="bi bi-pencil-square" />
                     </a>
                   </td>

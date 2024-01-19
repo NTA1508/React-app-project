@@ -86,8 +86,8 @@ export default function Cart() {
                             </div>
                             <div className="cart-footer">
                                 <p>
-                                    Nhấn "Đặt hàng" đồng nghĩa với việc bạn đồng ý tuân theo{" "}
-                                    <a href="#">Điều khoản của Exclusive</a>
+                                Pressing 'Place Order' implies that you agree to comply with {" "}
+                                    <a>Exclusive's Terms and Conditions.</a>
                                 </p>
                                 <a href="/checkout">
                                     <button className="order-cart" type="button">

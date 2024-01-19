@@ -1,4 +1,4 @@
-export default function AddProduct() {
+export default function EditProduct() {
     return (
         <div className="container">
             <div className="wrapper">
@@ -6,10 +6,12 @@ export default function AddProduct() {
                     <div className="contact-fix">
                         <a href="/admin">Home</a>
                         &nbsp;/&nbsp;
-                        <p>Add product</p>
+                        <a href="/all_products">All Products</a>
+                        &nbsp;/&nbsp;
+                        <p>Edit product</p>
                     </div>
                 </div>
-                <div style={{ width: "100%", textAlign: "center" }}><h4 style={{ fontSize: "20px" }}>Add Product</h4></div>
+                <div style={{ width: "100%", textAlign: "center" }}><h4 style={{ fontSize: "20px" }}>Edit Product</h4></div>
                 <form style={{ margin: 20 }}>
                     <div style={{ marginBottom: 20 }}>
                         <label
@@ -116,20 +118,6 @@ export default function AddProduct() {
                             style={{ width: "100%", padding: 8, boxSizing: "border-box" }}
                         />
                     </div>
-                    <div style={{ marginBottom: 20 }}>
-                        <label
-                            htmlFor="exampleFormControlFile1"
-                            style={{ display: "block", marginBottom: 5 }}
-                        >
-                            Product Pictures
-                        </label>
-                        <input
-                            type="file"
-                            id="exampleFormControlFile1"
-                            style={{ width: "100%", padding: 8, boxSizing: "border-box" }}
-                            multiple="true"
-                        />
-                    </div>
                     <div>
                         <button
                             type="submit"
@@ -141,7 +129,7 @@ export default function AddProduct() {
                                 cursor: "pointer"
                             }}
                         >
-                            Add
+                            Edit
                         </button>
                     </div>
                 </form>

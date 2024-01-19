@@ -19,6 +19,7 @@ import AllProducts from './pages/admin/all_products';
 import OrdersList from './pages/admin/orders_list';
 import Message from './pages/admin/message';
 import AddProduct from './pages/admin/add_product';
+import EditProduct from './pages/admin/edit_product';
 
 export default function Index() {
     return <>
@@ -48,6 +49,7 @@ export default function Index() {
                 <Route path="/oders_list" element={<OrdersList />}></Route>
                 <Route path="/message" element={<Message />}></Route>
                 <Route path="/add_product" element={<AddProduct />}></Route>
+                <Route path="/edit_product" element={<EditProduct />}></Route>
             </Routes>
             <Footer />
         </Router>
