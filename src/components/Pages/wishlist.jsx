@@ -1,6 +1,15 @@
 import PaginationComponent from "../script_handle/index_scripts/whishlist_pagechange";
+import React, { useEffect, useState } from 'react';
 
 export default function WishList() {
+    const [wishNumber, setWishNumber] = useState(0);
+    useEffect(() => {
+        // Sử dụng DOM để lấy danh sách các thẻ sản phẩm trong wishlist
+        const wishlistItems = document.querySelectorAll('.wishlist-list .product-item');
+    
+        // Đếm số lượng thẻ sản phẩm và cập nhật state
+        setWishNumber(wishlistItems.length);
+      }, []); // useEffect chỉ chạy một lần sau khi component được render
     return (
         <div className="container">
             <div className="wrapper">

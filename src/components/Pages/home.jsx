@@ -11,6 +11,7 @@ import feature4 from "../../assets/image/featured-4.png"
 import deliveryImg from "../../assets/image/icon-delivery.png"
 import customImg from "../../assets/image/Icon-customer_service.png"
 import secureImg from "../../assets/image/Icon-secure.png"
+import DaysLeftInMonth from '../script_handle/index_scripts/dayleft';
 class Home extends Component {
   render() {
     return (
@@ -85,10 +86,7 @@ class Home extends Component {
             <section className="section month">
               <div className="section-title">This Month</div>
               <div className="todays-title month-title">
-                <h1>Best Selling Products</h1>
-                <a href="#" className="section-link">
-                  View All
-                </a>
+                <DaysLeftInMonth/>
               </div>
               <MonthList />
             </section>

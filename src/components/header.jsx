@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
+import logo from "../assets/image/web_logo.png"
 export default function Header() {
     const [isMdAccountVisible, setIsMdAccountVisible] = useState(false);
     const [activeNavItem, setActiveNavItem] = useState(null);
@@ -46,7 +47,7 @@ export default function Header() {
                 </div>
                 <div className="container">
                     <div className="navbar">
-                        <a href="./index.html" className="logo">
+                        <a href="/home" className="logo">
                             Exclusive
                         </a>
                         <div className="sidebar">
@@ -111,7 +112,7 @@ export default function Header() {
                                 <div className="tools-item">
                                     <i className="bx bx-heart" />
                                     <span className="number-icon" id="heart-number">
-                                        2
+                                        0
                                     </span>
                                 </div>
                             </a>
@@ -119,7 +120,7 @@ export default function Header() {
                                 <div className="tools-item">
                                     <i className="bx bx-cart-alt" />
                                     <span className="number-icon" id="cart-number">
-                                        5
+                                        0
                                     </span>
                                 </div>
                             </a>
