@@ -23,7 +23,7 @@ const ProductList = () => {
     if (product.sale_type === "month") {
       const productItem = (
         <div key={product.id} className="product-item">
-          <a href="/detail">
+          <a href={`/detail/${product._id}`}>
             <div className="product-item__img">
               <img src={product.product_image} alt="product-img" />
               <button className="add-cart" type="button">

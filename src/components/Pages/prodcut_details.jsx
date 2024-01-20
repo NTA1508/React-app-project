@@ -53,7 +53,7 @@ const ProductDetail = () => {
                             <div className="product-nb">
                                 <nav>
                                     <ProductIncrement maxIncrement={products.stock_number} />
-                                    <a href="/cart">
+                                    <a href="#">
                                         <button className="pro-btn" type="button">
                                             Buy Now
                                         </button>

@@ -23,7 +23,7 @@ const TodaysProducts = () => {
     if (products.sale_type === "day") {
       const productItem = (
         <div key={products.id} className="product-item">
-          <a href="/detail">
+          <a href={`/detail/${products._id}`}>
             <div className="product-item__img">
               <img src={products.product_image
               } alt="product-img" />
