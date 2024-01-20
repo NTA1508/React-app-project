@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const AllProducts = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:3001/getProducts')
+      .then(response => setProducts(response.data))
+      .catch(err => console.log(err))
+  }, []);
+
   return (
     <div className="container">
       <div className="wrapper">
@@ -29,48 +38,29 @@ const AllProducts = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="cart-text">1</td>
-                  <td className="cart-img">
-                    <img src="https://logico.com.vn/images/products/2023/02/10/original/tay-cam-playstation-5-dualsense-edge-1_1676014066.png" alt="img" />
-                  </td>
-                  <td className="cart-text">Playstation 5 DualSense Edge</td>
-                  <td className="cart-text">Game consoles</td>
-                  <td className="cart-text">50</td>
-                  <td className="cart-text">$240</td>
-                  <td className="cart-text">20%</td>
-                  <td className="cart-text">Month sale</td>
-                  <td className="cart-text">Ha Noi</td>
-                  <td>
-                    <a href="#">
-                      <i className="bi bi-trash3" />
-                    </a>
-                    <a href="/edit_product" style={{marginLeft:"10px"}}>
-                      <i className="bi bi-pencil-square" />
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="cart-text">2</td>
-                  <td className="cart-img">
-                    <img src="https://media.wired.com/photos/5b22c5c4b878a15e9ce80d92/master/w_1920,c_limit/iphonex-TA.jpg" alt="img" />
-                  </td>
-                  <td className="cart-text">IPhone X</td>
-                  <td className="cart-text">Mobile phones</td>
-                  <td className="cart-text">100</td>
-                  <td className="cart-text">$200</td>
-                  <td className="cart-text">10%</td>
-                  <td className="cart-text">Day sale</td>
-                  <td className="cart-text">Da Nang</td>
-                  <td>
-                    <a href="#">
-                      <i className="bi bi-trash3" />
-                    </a>
-                    <a href="/edit_product" style={{marginLeft:"10px"}}>
-                      <i className="bi bi-pencil-square" />
-                    </a>
-                  </td>
-                </tr>
+                {products.map(product => (
+                  <tr key={product._id}>
+                    <td className="cart-text">{product._id}</td>
+                    <td className="cart-img">
+                      <img src={product.product_image} alt="product-img" />
+                    </td>
+                    <td className="cart-text">{product.product_name}</td>
+                    <td className="cart-text">{product.type}</td>
+                    <td className="cart-text">{product.stock_number}</td>
+                    <td className="cart-text">${product.price}</td>
+                    <td className="cart-text">{product.sales}%</td>
+                    <td className="cart-text">{product.promotion_type}</td>
+                    <td className="cart-text">{product.storage_address}</td>
+                    <td>
+                      <a href="#">
+                        <i className="bi bi-trash3" />
+                      </a>
+                      <a href="/edit_product" style={{ marginLeft: "10px" }}>
+                        <i className="bi bi-pencil-square" />
+                      </a>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
