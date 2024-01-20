@@ -1,5 +1,4 @@
 import Index from './components/index';
-
 function App() {
   return (
     <>

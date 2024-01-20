@@ -8,6 +8,7 @@ export default function Header() {
     const mdAccountRef = useRef(null);
     const [user, setUser] = useState(false)
     const [id , setId] = useState()
+    const [isAdmin, setAdmin] = useState(false)
 
     // console.log(token)
     
@@ -15,8 +16,9 @@ export default function Header() {
         const token = JSON.parse(localStorage.getItem("token"));
         axios.get('http://localhost:3001/user/' + token)
         .then(result => {
-            // console.log(result.data)
+            console.log(result.data)
             setId(result.data.id)
+            setAdmin(result.data.isAdmin)
         })
         .catch(err => console.log(err))
     },[])
@@ -110,6 +112,14 @@ export default function Header() {
                                 style={{display: user? "none" :  ""}}
                             >
                                 Login
+                            </NavLink>
+                            <NavLink
+                                to="/admin"
+                                className={`sidebar-item ${activeNavItem === 'admin' ? 'active' : ''}`}
+                                onClick={() => handleNavItemClick('admin')}
+                                style={{display: isAdmin? "" :  "none"}}
+                            >
+                                Admin
                             </NavLink>
                         </div>
                         <div className="tools-list">

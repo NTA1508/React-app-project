@@ -1,19 +1,25 @@
 import '../App.css';
 import Header from './header';
-import Home from './pages/home'
+import Home from './Pages/home'
 import Footer from './footer';
-import Contact from './pages/contact';
-import AboutUs from './pages/about';
-import Cart from './pages/cart';
-import CheckOut from './pages/checkout';
-import ProductDetail from './pages/prodcut_details';
-import WishList from './pages/wishlist';
-import ProductCate from './pages/products_categories/products_category';
-import Profile from './pages/profile';
+import Contact from './Pages/contact';
+import AboutUs from './Pages/about';
+import Cart from './Pages/cart';
+import CheckOut from './Pages/checkout';
+import ProductDetail from './Pages/prodcut_details';
+import WishList from './Pages/wishlist';
+import ProductCate from './Pages/products_categories/products_category';
+import Profile from './Pages/profile';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from './pages/login';
-import Register from './pages/register';
-import MyOrder from './pages/myoder';
+import Login from './Pages/login';
+import Register from './Pages/register';
+import MyOrder from './Pages/myoder';
+import Admin from './Pages/admin/admin';
+import AllProducts from './Pages/admin/all_products';
+import OrdersList from './Pages/admin/orders_list';
+import Message from './Pages/admin/message';
+import AddProduct from './Pages/admin/add_product';
+import EditProduct from './Pages/admin/edit_product'
 
 export default function Index() {
     return <>
@@ -28,6 +34,12 @@ export default function Index() {
                 <Route path="/contact" element={<Contact />}></Route>
                 <Route path="/about" element={<AboutUs />}></Route>
                 <Route path="/cart" element={<Cart />}></Route>
+                <Route path="/admin" element={<Admin />}></Route>
+                <Route path="/all_products" element={<AllProducts />}></Route>
+                <Route path="/oders_list" element={<OrdersList />}></Route>
+                <Route path="/message" element={<Message />}></Route>
+                <Route path="/add_product" element={<AddProduct />}></Route>
+                <Route path="/edit_product/:id" element={<EditProduct />}></Route>
                 <Route path="/checkout" element={<CheckOut />}></Route>
                 <Route path="/detail" element={<ProductDetail />}></Route>
                 <Route path="/wishlist" element={<WishList />}></Route>
