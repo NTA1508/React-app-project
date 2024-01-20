@@ -12,15 +12,15 @@ export default function Login() {
   const Submit = (e) => {
     e.preventDefault();
     axios
-      .post("https://web-shopping.onrender.com/login", { email, password })
+      .post("http://localhost:3001/login", { email, password })
       .then((result) => {
-        console.log(result)
+        console.log(result);
         if (result.status === 200) {
           alert("Đăng nhập thành công");
           localStorage.setItem("token", JSON.stringify(result.data.token));
-          console.log(JSON.parse(localStorage.getItem("token")).token)
-          navigate('/home');
-          window.location.reload()
+          console.log(JSON.parse(localStorage.getItem("token")).token);
+          navigate("/home");
+          window.location.reload();
         } else if (result.status === 201) {
           alert("Mật khẩu không đúng");
         }
@@ -38,21 +38,10 @@ export default function Login() {
             <form className="form-control" onSubmit={Submit}>
               <h1>Log in to Exclusive</h1>
               <div className="form-box">
-                <input
-                  className="form-input"
-                  type="email"
-                  placeholder="Email"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
+                <input className="form-input" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
               </div>
               <div className="form-box">
-                <input
-                  className="form-input"
-                  type="password"
-                  placeholder="Password"
-                  id="passwordField"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
+                <input className="form-input" type="password" placeholder="Password" id="passwordField" onChange={(e) => setPassword(e.target.value)} />
                 <i id="togglePassword" onClick={togglePasswordVisibility}>
                   <img id="togglePassword" src={showImage} alt="showButton" />
                 </i>
