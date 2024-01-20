@@ -1,6 +1,6 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function AddProduct() {
   const navigate = useNavigate()
@@ -18,12 +18,12 @@ export default function AddProduct() {
     e.preventDefault();
     console.log({productType, stock, storageAddress})
     axios
-      .post("http://localhost:3001/products/create", {
+      .post("https://web-shopping.onrender.com/products/create", {
         productName, image, productType, description, price, sales, promotionType, storageAddress, stock
       })
       .then((result) => {
         console.log(result);
-        navigate('/all_products')
+        window.location.replace('/admin')
       })
       .catch((err) => console.log(err));
   };
@@ -49,7 +49,7 @@ export default function AddProduct() {
       <div className="wrapper">
         <div className="contact-title">
           <div className="contact-fix">
-            <a href="/admin">Home</a>
+            <Link to="/admin">Home</Link>
             &nbsp;/&nbsp;
             <p>Add product</p>
           </div>
@@ -89,7 +89,8 @@ export default function AddProduct() {
               style={{ width: "100%", padding: 8, boxSizing: "border-box" }}
               onChange={(e) => setProductType(e.target.value)}
             >
-              <option value={"phones"} selected>Mobile phones</option>
+              <option selected>Chọn loại hàng</option>
+              <option value={"phones"} >Mobile phones</option>
               <option value={"laptops"}>Laptops and Tablets</option>
               <option value={"tv"}>Televisions and Monitors</option>
               <option value={"audios"}>Audio and Headphones</option>
@@ -161,6 +162,7 @@ export default function AddProduct() {
               style={{ width: "100%", padding: 8, boxSizing: "border-box" }}
               onChange={(e) => setPromotionType(e.target.value)}
             >
+              <option selected>Chọn loại hàng</option>
               <option value={"no"}>No</option>
               <option value={"day"}>Day</option>
               <option value={"month"}>Month</option>

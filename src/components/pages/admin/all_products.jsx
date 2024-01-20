@@ -6,7 +6,7 @@ const AllProducts = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3001/products")
+      .get("https://web-shopping.onrender.com/products")
       .then((result) => {
         console.log(result);
         setData(result.data);
@@ -16,7 +16,7 @@ const AllProducts = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete("http://localhost:3001/products/delete/" + id)
+      .delete("https://web-shopping.onrender.com/products/delete/" + id)
       .then((res) => {
         window.location.reload();
       })

@@ -14,7 +14,7 @@ export default function Register() {
   const Submit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/register", {
+      .post("https://web-shopping.onrender.com/register", {
         firstName,
         lastName,
         email,
