@@ -24,55 +24,62 @@ class Home extends Component {
                 <div className="category-item">
                   <div className="menu-title">
                     <a href="/products">
+                      <p>All products</p>
+                    </a>
+                  </div>
+                </div>
+                <div className="category-item">
+                  <div className="menu-title">
+                    <a href="/mobiles">
                       <p>Mobile phones</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="/products">
+                    <a href="/laptops">
                       <p>Laptops and Tablets</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="/products">
+                    <a href="/tv">
                       <p>Televisions and Monitors</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="/products">
+                    <a href="/audios">
                       <p>Audio and Headphones</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="/products">
+                    <a href="/cameras">
                       <p>Cameras and Camcorders</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="/products">
+                    <a href="/consoles">
                       <p>Game consoles</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="/products">
+                    <a href="/printers">
                       <p>Printers and Scanners</p>
                     </a>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="/products">
+                    <a href="/smart">
                       <p>Smart home appliances</p>
                     </a>
                   </div>
@@ -86,7 +93,8 @@ class Home extends Component {
             <section className="section month">
               <div className="section-title">This Month</div>
               <div className="todays-title month-title">
-                <DaysLeftInMonth/>
+                <DaysLeftInMonth />
+                <a href="#" class="section-link">View All</a>
               </div>
               <MonthList />
             </section>
@@ -104,9 +112,6 @@ class Home extends Component {
                   <div className="swiper-button-next" />
                   <div className="swiper-button-prev" />
                 </div>
-              </div>
-              <div className="section-button">
-                <button>View All Products</button>
               </div>
             </section>
             {/* featured */}

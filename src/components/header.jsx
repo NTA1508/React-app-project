@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/image/web_logo.png"
 export default function Header() {
     const [isMdAccountVisible, setIsMdAccountVisible] = useState(false);
     const [activeNavItem, setActiveNavItem] = useState(null);

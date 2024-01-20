@@ -18,6 +18,7 @@ const DaysLeftInMonth = () => {
 
   return (
     <h1>The Promotion Of This Month: {daysLeft} days left</h1>
+
   );
 };
 

@@ -1,54 +1,53 @@
 import React, { useEffect, useState } from 'react';
-import product from '../../data/data';
+import axios from 'axios';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const fetchProducts = () => {
-      const limitedProducts = product.slice(0, 4);
-      setProducts(limitedProducts);
-    };
-
-    fetchProducts();
+    axios.get('http://localhost:3001/getProducts')
+      .then(response => setProducts(response.data))
+      .catch(error => console.error(error));
   }, []);
 
-  const renderProducts = () => {
-    const productDivs = [];
-    let productChildren = [];
-    let count = 0;
+  const productsArray = Array.isArray(products) ? products : [];
 
-    products.forEach((item, index) => {
-      if (count === 0) {
-        productChildren = [];
-      }
+  const productDivs = [];
+  let productChildren = [];
+  let count = 0;
 
+  productsArray.forEach((products, index) => {
+    if (count === 0) {
+      productChildren = [];
+    }
+    if (products.sale_type === "month") {
       const productItem = (
-        <div key={item.id} className="product-item">
+        <div key={products.id} className="product-item">
           <a href="/detail">
             <div className="product-item__img">
-              <img src={`./assets/images/${item.images.imageOne}`} alt="product-img" />
+              <img src={products.product_image
+              } alt="product-img" />
               <button className="add-cart" type="button">
                 Add To Cart
               </button>
             </div>
-            <h4 className="product-name webkit-text">{item.name}</h4>
+            <h4 className="product-name webkit-text">{products.product_name}</h4>
           </a>
           <div className="product-price">
-            <span id="price-new">${item.priceNew}</span>
-            <span id="price-old">${item.priceOld}</span>
+            <span id="price-new">${products.price - products.price * products.sales / 100}</span>
+            <span id="price-old">${products.price}</span>
           </div>
           <div className="product-action">
             <i className='bx bx-map-pin'></i>
-            <span>{item.address}</span>
+            <span>{products.storage_address}</span>
           </div>
-          <div className="discount">{item.discountSale}</div>
+          <div className="discount">-{products.sales}%</div>
           <div className="product-tools">
             <button className="product-tl__button" type="button">
               <i className='bx bx-heart'></i>
             </button>
             <button className="product-tl__button product-button__eye" type="button">
-              <a href='/detail' style={{color:"black"}}><i className="bi bi-eye"></i></a>
+              <a href='/detail' style={{ color: "black" }}><i className="bi bi-eye"></i></a>
             </button>
           </div>
         </div>
@@ -57,21 +56,18 @@ const ProductList = () => {
       productChildren.push(productItem);
 
       count++;
-      if (count === 4 || index === products.length - 1) {
-        const productDiv = (
-          <div key={index} className="swiper-slide todays-slide__item">
-            {productChildren}
-          </div>
-        );
-        productDivs.push(productDiv);
-        count = 0;
-      }
-    });
-
-    return productDivs;
-  };
-
-  return <div id="todaysList" className="swiper-wrapper">{renderProducts()}</div>;
+    }
+    if (count === 4 || index === products.length - 1) {
+      const productDiv = (
+        <div key={index} className="swiper-slide todays-slide__item">
+          {productChildren}
+        </div>
+      );
+      productDivs.push(productDiv);
+      count = 0;
+    }
+  });
+  return <div id="todaysList" className="swiper-wrapper">{productDivs}</div>;
 };
 
 export default ProductList;

@@ -48,21 +48,21 @@ export default function AboutUs() {
                             </div>
                             <div className="story-item">
                                 <div className="advantage-logo">
-                                <img src={deliveryImg} alt="" />
+                                    <img src={deliveryImg} alt="" />
                                 </div>
                                 <h3>10.5k</h3>
                                 <p>Sallers active our site</p>
                             </div>
                             <div className="story-item">
                                 <div className="advantage-logo">
-                                <img src={deliveryImg} alt="" />
+                                    <img src={deliveryImg} alt="" />
                                 </div>
                                 <h3>10.5k</h3>
                                 <p>Sallers active our site</p>
                             </div>
                             <div className="story-item">
                                 <div className="advantage-logo">
-                                <img src={deliveryImg} alt="" />
+                                    <img src={deliveryImg} alt="" />
                                 </div>
                                 <h3>10.5k</h3>
                                 <p>Sallers active our site</p>

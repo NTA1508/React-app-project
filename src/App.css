@@ -438,7 +438,12 @@ header {
     border-right: 1px solid var(--ball-color);
     overflow-y: scroll;
 }
-
+.category-product {
+    width: 20%;
+    height: 100%;
+    border-right: 1px solid var(--ball-color);
+    /* overflow-y: scroll; */
+  }
 .category::-webkit-scrollbar {
     display: none;
 }
@@ -450,7 +455,13 @@ header {
     line-height: 50px;
     cursor: pointer;
 }
-
+.category-item-product {
+    display: block;
+    width: 100%;
+    height: auto;
+    line-height: 50px;
+    cursor: pointer;
+  }
 .sub-menu {
     width: 100%;
     display: flex;

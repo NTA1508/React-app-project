@@ -20,13 +20,21 @@ import OrdersList from './pages/admin/orders_list';
 import Message from './pages/admin/message';
 import AddProduct from './pages/admin/add_product';
 import EditProduct from './pages/admin/edit_product';
+import Test from './test';
+import Mobile from './pages/products_categories/mobiles';
+import Laptops from './pages/products_categories/latops';
+import TV from './pages/products_categories/tv';
+import Audios from './pages/products_categories/audious';
+import Cameras from './pages/products_categories/cameras';
+import Consoles from './pages/products_categories/consoles';
+import Printers from './pages/products_categories/printers';
+import Smart from './pages/products_categories/smart';
 
 export default function Index() {
     return <>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-        
         <Router>
             <Header />
             {/* <Admin/> */}
@@ -37,7 +45,7 @@ export default function Index() {
                 <Route path="/about" element={<AboutUs />}></Route>
                 <Route path="/cart" element={<Cart />}></Route>
                 <Route path="/checkout" element={<CheckOut />}></Route>
-                <Route path="/detail" element={<ProductDetail />}></Route>
+                <Route path="/detail/:id" element={<ProductDetail />}></Route>
                 <Route path="/wishlist" element={<WishList />}></Route>
                 <Route path="/products" element={<ProductCate />}></Route>
                 <Route path="/profile" element={<Profile />}></Route>
@@ -50,6 +58,14 @@ export default function Index() {
                 <Route path="/message" element={<Message />}></Route>
                 <Route path="/add_product" element={<AddProduct />}></Route>
                 <Route path="/edit_product" element={<EditProduct />}></Route>
+                <Route path="/mobiles" element={<Mobile />}></Route>
+                <Route path="/laptops" element={<Laptops />}></Route>
+                <Route path="/tv" element={<TV />}></Route>
+                <Route path="/audios" element={<Audios />}></Route>
+                <Route path="/cameras" element={<Cameras />}></Route>
+                <Route path="/consoles" element={<Consoles />}></Route>
+                <Route path="/printers" element={<Printers />}></Route>
+                <Route path="/smart" element={<Smart />}></Route>
             </Routes>
             <Footer />
         </Router>

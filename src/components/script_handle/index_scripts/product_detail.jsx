@@ -1,5 +1,7 @@
 import React from 'react';
-
+import  { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 const ChangeImage = () => {
   const changeImage = (element) => {
     const smallImages = document.querySelectorAll('.item-img-small');
@@ -10,6 +12,19 @@ const ChangeImage = () => {
     const imgSrc = element.querySelector('img').src;
     document.getElementById('img-big').src = imgSrc;
   };
+  const { id } = useParams();
+    const [products, setProduct] = useState(null);
+  
+    useEffect(() => {
+      // Fetch the product details from the server
+      axios.get(`http://localhost:3001/getProducts/${id}`)
+        .then(response => setProduct(response.data))
+        .catch(error => console.error('Error fetching product details:', error));
+    }, [id]);
+  
+    if (!products) {
+      return <div>Loading...</div>;
+    }
 
   return (
     <div className="product-imgs">
@@ -19,34 +34,34 @@ const ChangeImage = () => {
           id="img-small1"
           onClick={() => changeImage(document.getElementById('img-small1'))}
         >
-          <img src="https://cdn.tgdd.vn/Files/2020/08/13/1279576/wccfdualsensecontroller_800x450.jpg" alt="img" />
+          <img src= {products.product_image} alt="img" />
         </div>
         <div
           className="item-img-small"
           id="img-small2"
           onClick={() => changeImage(document.getElementById('img-small2'))}
         >
-          <img src="https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/uploads/images/tin-tuc/158533/Originals/galaxy-z-flip-5-gia-bao-nhieu-a.jpg" alt="img" />
+          <img src= {products.product_image} alt="img" />
         </div>
         <div
           className="item-img-small"
           id="img-small3"
           onClick={() => changeImage(document.getElementById('img-small3'))}
         >
-          <img src="https://kenh14cdn.com/203336854389633024/2022/3/12/thumbnail-elle-iphone-v2-1646951838-1647070083505165556927.jpeg" alt="img" />
+          <img src= {products.product_image} alt="img" />
         </div>
         <div
           className="item-img-small"
           id="img-small4"
           onClick={() => changeImage(document.getElementById('img-small4'))}
         >
-          <img src="https://cdn.tgdd.vn/Products/Images/1942/306593/8050psb.jpg" alt="img" />
+          <img src= {products.product_image} alt="img" />
         </div>
       </div>
       <div className="img-big">
         <img
           id="img-big"
-          src="https://cdn.tgdd.vn/Files/2020/08/13/1279576/wccfdualsensecontroller_800x450.jpg"
+          src= {products.product_image}
           alt="img"
         />
       </div>
