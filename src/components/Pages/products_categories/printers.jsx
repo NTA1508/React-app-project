@@ -61,7 +61,7 @@ export default function Printers() {
                         <div className="category-item">
                             <div className="menu-title">
                                 <NavLink to={"/cameras"}>
-                                    <p>Cameras and Camcorders</p>
+                                    <p>Cameras</p>
                                 </NavLink>
                             </div>
                         </div>
@@ -88,7 +88,7 @@ export default function Printers() {
                         </div>
                     </div>
                 </div>
-                <div className="wishlist-nav" style={{marginLeft: "10px"}}>
+                <div className="wishlist-nav-1" style={{marginLeft: "10px"}}>
                     <div className="contact-title">
                         <div className="contact-fix">
                             <a href="/home">Home</a>
@@ -135,7 +135,7 @@ export default function Printers() {
                                 ))}
                         </div>
                         {/* pagination - phân trang */}
-                        <PaginationComponent />
+                        {/* <PaginationComponent /> */}
                     </div>
                 </div>
             </div>

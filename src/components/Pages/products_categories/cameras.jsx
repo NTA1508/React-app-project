@@ -61,7 +61,7 @@ export default function Cameras() {
                         <div className="category-item">
                             <div className="menu-title">
                                 <NavLink to={"/cameras"}>
-                                    <p style={{ color: "#DB4444" }}>Cameras and Camcorders</p>
+                                    <p style={{ color: "#DB4444" }}>Cameras</p>
                                 </NavLink>
                             </div>
                         </div>
@@ -88,12 +88,12 @@ export default function Cameras() {
                         </div>
                     </div>
                 </div>
-                <div className="wishlist-nav" style={{marginLeft: "10px"}}>
+                <div className="wishlist-nav-1" style={{marginLeft: "10px"}}>
                     <div className="contact-title">
                         <div className="contact-fix">
                             <a href="/home">Home</a>
                             &nbsp;/&nbsp;
-                            <p>Cameras and Camcorders</p>
+                            <p>Cameras</p>
                         </div>
                     </div>
                     <div className="wishlist-wrap">
@@ -135,7 +135,7 @@ export default function Cameras() {
                                 ))}
                         </div>
                         {/* pagination - phân trang */}
-                        <PaginationComponent />
+                        {/* <PaginationComponent /> */}
                     </div>
                 </div>
             </div>
