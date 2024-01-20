@@ -1,38 +1,64 @@
 import React, { useEffect, useState } from "react";
+<<<<<<< HEAD
 import { Link, useParams} from "react-router-dom";
 import axios from "axios";
 function Profile() {
   const {id} = useParams();
+=======
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
+function Profile() {
+  const { id } = useParams();
+>>>>>>> 528c257 (cart)
   const [edit, setEdit] = useState(false);
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [email, setEmail] = useState();
   const [address, setAddress] = useState();
   // const [avata, setAvata] = useState("");
+<<<<<<< HEAD
   const [currentpass, setCurrentPass] = useState('');
   const [newpass, setNewPass] = useState('');
+=======
+  const [currentpass, setCurrentPass] = useState("");
+  const [newpass, setNewPass] = useState("");
+>>>>>>> 528c257 (cart)
 
   const check = () => {
     setEdit(!edit);
   };
   useEffect(() => {
+<<<<<<< HEAD
     axios.get("https://web-shopping.onrender.com/getUser/" + id).then((result) => {
       // console.log(result)
       setFirstName(result.data.firstName)
       setLastName(result.data.lastName)
       setEmail(result.data.email)
       setAddress(result.data.address)
+=======
+    axios.get("http://localhost:3001/getUser/" + id).then((result) => {
+      // console.log(result)
+      setFirstName(result.data.firstName);
+      setLastName(result.data.lastName);
+      setEmail(result.data.email);
+      setAddress(result.data.address);
+>>>>>>> 528c257 (cart)
     });
   }, []);
   const Update = (e) => {
     e.preventDefault();
     axios
+<<<<<<< HEAD
       .put("https://web-shopping.onrender.com/updateUser/" + id, {
+=======
+      .put("http://localhost:3001/updateUser/" + id, {
+>>>>>>> 528c257 (cart)
         firstName,
         lastName,
         email,
         address,
         currentpass,
+<<<<<<< HEAD
         newpass
       })
       .then((result) => {
@@ -51,6 +77,24 @@ function Profile() {
         }
       })
       .catch((err)=> console.log(err));
+=======
+        newpass,
+      })
+      .then((result) => {
+        console.log(result);
+        if (result.status === 200) {
+          window.location.reload();
+        } else if (result.status === 201) {
+          alert("Đổi mật khẩu thành công");
+          window.location.reload();
+        } else if (result.status === 202) {
+          alert("Chưa nhập mật khẩu mới");
+        } else if (result.status === 203) {
+          alert("Mật khẩu hiện tại không đúng");
+        }
+      })
+      .catch((err) => console.log(err));
+>>>>>>> 528c257 (cart)
   };
 
   return (
@@ -65,7 +109,7 @@ function Profile() {
               </div>
               <div className="contact-fix2">
                 <p>My Account</p>&#160;
-                <p style={{float: "right"}}>Wellcome {firstName + lastName}</p>
+                <p style={{ float: "right" }}>Wellcome {firstName + lastName}</p>
               </div>
             </div>
           </div>
@@ -81,6 +125,7 @@ function Profile() {
               <div className="account-group">
                 <div className="account-form">
                   <label>First Name</label>
+<<<<<<< HEAD
                   <input
                     className="contact-input"
                     id="account-input"
@@ -100,11 +145,19 @@ function Profile() {
                     disabled={edit === false}
                     onChange={(e) => setLastName(e.target.value)}
                   />
+=======
+                  <input className="contact-input" id="account-input" type="text" value={firstName} disabled={edit === false} onChange={(e) => setFirstName(e.target.value)} />
+                </div>
+                <div className="account-form">
+                  <label>Last Name</label>
+                  <input className="contact-input" id="account-input" type="text" value={lastName} disabled={edit === false} onChange={(e) => setLastName(e.target.value)} />
+>>>>>>> 528c257 (cart)
                 </div>
               </div>
               <div className="account-group">
                 <div className="account-form">
                   <label>Email</label>
+<<<<<<< HEAD
                   <input
                     className="contact-input"
                     id="account-input"
@@ -124,6 +177,13 @@ function Profile() {
                     disabled={edit === false}
                     onChange={(e) => setAddress(e.target.value)}
                   />
+=======
+                  <input className="contact-input" id="account-input" type="text" value={email} disabled={edit === false} onChange={(e) => setEmail(e.target.value)} />
+                </div>
+                <div className="account-form">
+                  <label>Address</label>
+                  <input className="contact-input" id="account-input" type="text" value={address} disabled={edit === false} onChange={(e) => setAddress(e.target.value)} />
+>>>>>>> 528c257 (cart)
                 </div>
               </div>
               <div className="account-form">
@@ -152,6 +212,7 @@ function Profile() {
               <div className="account-button">
                 {edit === true && (
                   <>
+<<<<<<< HEAD
                     <button
                       className="contact-button"
                       id="cancel-button"
@@ -165,6 +226,12 @@ function Profile() {
                       id="save-button"
                       type="submit"
                     >
+=======
+                    <button className="contact-button" id="cancel-button" type="button" onClick={() => window.location.reload()}>
+                      Cancel
+                    </button>
+                    <button className="contact-button" id="save-button" type="submit">
+>>>>>>> 528c257 (cart)
                       Save changes
                     </button>
                   </>
