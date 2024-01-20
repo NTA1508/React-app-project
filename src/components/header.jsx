@@ -1,10 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
+import axios from 'axios';
+
 export default function Header() {
     const [isMdAccountVisible, setIsMdAccountVisible] = useState(false);
     const [activeNavItem, setActiveNavItem] = useState(null);
     const accountButtonRef = useRef(null);
     const mdAccountRef = useRef(null);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
         const handleDocumentClick = (event) => {
@@ -25,6 +30,12 @@ export default function Header() {
         };
     }, []);
 
+    useEffect(() => {
+        axios.get('http://localhost:3001/getProducts')
+            .then(response => setProducts(response.data))
+            .catch(err => console.log(err))
+    }, []);
+
     const handleAccountButtonClick = (event) => {
         event.stopPropagation();
         setIsMdAccountVisible((prev) => !prev);
@@ -33,6 +44,18 @@ export default function Header() {
     const handleNavItemClick = (navItem) => {
         setActiveNavItem(navItem);
     };
+    const handleSearchInputChange = (event) => {
+        setSearchQuery(event.target.value);
+    };
+
+    useEffect(() => {
+        // Filter products based on the search query
+        const filteredProducts = products.filter(product =>
+            product.product_name.toLowerCase().startsWith(searchQuery.toLowerCase())
+        );
+
+        setSearchResults(filteredProducts);
+    }, [searchQuery, products]);
     return (
         <>
             <header>
@@ -88,24 +111,47 @@ export default function Header() {
                         </div>
                         <div className="tools-list">
                             <div className="search-nav">
-                                <input className="search-input" type="text" placeholder="Search..." />
+                                <input
+                                    className="search-input"
+                                    type="text"
+                                    placeholder="Search..."
+                                    value={searchQuery}
+                                    onChange={handleSearchInputChange}
+                                />
                                 <i className="bx bx-search icon-search" />
-                                {/* search-result */}
-                                <div className="search-result">
-                                    <div className="search-title">
-                                        Search Results: &nbsp;<span>4</span>&nbsp;Results
+                                {searchQuery && (
+                                    <div className="search-result">
+                                        {searchResults.length > 0 ? (
+                                            <>
+                                                <div className="search-title">
+                                                    Search Results: &nbsp;<span>{searchResults.length}</span>&nbsp;Results
+                                                </div>
+                                                <div className="search-list">
+                                                    {searchResults.map(result => (
+                                                        <a href={`/detail/${result._id}`} key={result.id}>
+                                                            <div className="search-item">
+                                                                <i className='bx bx-search icon-search'></i>
+                                                                <span>{result.product_name}</span>
+                                                            </div>
+                                                        </a>
+                                                    ))}
+                                                </div>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <div className="search-title">
+                                                    Search Results: &nbsp;<span>0</span>&nbsp;Results
+                                                </div>
+                                                <div className="search-list">
+                                                    <div className="search-item">
+                                                        <i className='bx bx-search icon-search'></i>
+                                                        <span>No results for {searchQuery}</span>
+                                                    </div>
+                                                </div>
+                                            </>
+                                        )}
                                     </div>
-                                    <div className="search-list">
-                                        {/* <a href="#">
-                              <div class="search-item">
-                                  <i class='bx bx-search icon-search'></i>
-                                  <span>HAVIT HV-G92 Gamepad</span>
-                              </div>
-                          </a> */}
-                                        {/* message */}
-                                        <div className="message">No results were found!</div>
-                                    </div>
-                                </div>
+                                )}
                             </div>
                             <a href="/wishlist">
                                 <div className="tools-item">
