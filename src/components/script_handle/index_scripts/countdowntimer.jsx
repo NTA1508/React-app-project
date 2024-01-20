@@ -1,7 +1,6 @@
 import banner from "../../../assets/image/banner.png"
 import React, { Component, useEffect, useState } from 'react';
 const CountdownTimer = () => {
-  // State for countdown values
   const [days, setDays] = useState('00');
   const [hours, setHours] = useState('00');
   const [minutes, setMinutes] = useState('00');

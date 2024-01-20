@@ -88,7 +88,7 @@ export default function ProductCate() {
                         </div>
                     </div>
                 </div>
-                <div className="wishlist-nav-1" style={{marginLeft: "10px"}}>
+                <div className="wishlist-nav-1" style={{ marginLeft: "10px" }}>
                     <div className="contact-title">
                         <div className="contact-fix">
                             <a href="/home">Home</a>
@@ -110,23 +110,35 @@ export default function ProductCate() {
                                         <h4 className="product-name webkit-text">{products.product_name}</h4>
                                     </a>
                                     <div className="product-price">
-                                        <span id="price-new">${products.price - products.price * products.sales / 100}</span>
-                                        <span id="price-old">${products.price}</span>
+                                        {products.sale_type === "no" ? (
+                                            <>
+                                                <span id="price-new">${products.price}</span>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <span id="price-new">${products.price - products.price * products.sales / 100}</span>
+                                                <span id="price-old">${products.price}</span>
+                                            </>
+                                        )}
+
+
                                     </div>
                                     <div className="product-action">
                                         <i className="bx bx-map-pin" />
                                         <span>{products.storage_address}</span>
                                     </div>
-                                    <div className="discount">-{products.sales}%</div>
+                                    {products.sale_type === "no" ? (
+                                        <>
+                                            <span></span>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <div className="discount">-{products.sales}%</div>
+                                        </>
+                                    )}
                                     <div className="product-tools">
                                         <button className="product-tl__button" type="button">
                                             <i className="bx bx-heart" />
-                                        </button>
-                                        <button
-                                            className="product-tl__button product-button__eye"
-                                            type="button"
-                                        >
-                                            <a href='/detail' style={{ color: "black" }}><i className="bi bi-eye"></i></a>
                                         </button>
                                     </div>
 

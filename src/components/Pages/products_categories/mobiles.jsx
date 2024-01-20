@@ -20,7 +20,7 @@ export default function Mobile() {
 
     return (
         <div className="container">
-           <div className="wrapper" style={{ display: "flex" }}>
+            <div className="wrapper" style={{ display: "flex" }}>
                 <div className="category-product">
                     <div className="category-item-product">
                         <div className="menu-title">
@@ -88,7 +88,7 @@ export default function Mobile() {
                         </div>
                     </div>
                 </div>
-                <div className="wishlist-nav-1" style={{marginLeft: "10px"}}>
+                <div className="wishlist-nav-1" style={{ marginLeft: "10px" }}>
                     <div className="contact-title">
                         <div className="contact-fix">
                             <a href="/home">Home</a>
@@ -112,23 +112,35 @@ export default function Mobile() {
                                             <h4 className="product-name webkit-text">{product.product_name}</h4>
                                         </a>
                                         <div className="product-price">
-                                            <span id="price-new">${product.price - product.price * product.sales / 100}</span>
-                                            <span id="price-old">${product.price}</span>
+                                            {product.sale_type === "no" ? (
+                                                <>
+                                                    <span id="price-new">${product.price}</span>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <span id="price-new">${product.price - product.price * product.sales / 100}</span>
+                                                    <span id="price-old">${product.price}</span>
+                                                </>
+                                            )}
+
+
                                         </div>
                                         <div className="product-action">
                                             <i className="bx bx-map-pin" />
                                             <span>{product.storage_address}</span>
                                         </div>
-                                        <div className="discount">-{product.sales}%</div>
+                                        {product.sale_type === "no" ? (
+                                            <>
+                                                <span></span>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <div className="discount">-{product.sales}%</div>
+                                            </>
+                                        )}
                                         <div className="product-tools">
                                             <button className="product-tl__button" type="button">
                                                 <i className="bx bx-heart" />
-                                            </button>
-                                            <button
-                                                className="product-tl__button product-button__eye"
-                                                type="button"
-                                            >
-                                                <a href='/detail' style={{ color: "black" }}><i className="bi bi-eye"></i></a>
                                             </button>
                                         </div>
                                     </div>

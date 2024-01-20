@@ -29,6 +29,8 @@ import Cameras from './pages/products_categories/cameras';
 import Consoles from './pages/products_categories/consoles';
 import Printers from './pages/products_categories/printers';
 import Smart from './pages/products_categories/smart';
+import TodaySalePage from './pages/products_categories/today_sale';
+import MonthSalePage from './pages/products_categories/month_sale';
 
 export default function Index() {
     return <>
@@ -66,6 +68,8 @@ export default function Index() {
                 <Route path="/consoles" element={<Consoles />}></Route>
                 <Route path="/printers" element={<Printers />}></Route>
                 <Route path="/smart" element={<Smart />}></Route>
+                <Route path="/day_sale" element={<TodaySalePage />}></Route>
+                <Route path="/month_sale" element={<MonthSalePage />}></Route>
             </Routes>
             <Footer />
         </Router>

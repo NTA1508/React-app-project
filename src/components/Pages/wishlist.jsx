@@ -225,7 +225,7 @@ export default function WishList() {
                             </div>
                         </div>
                         {/* pagination - phân trang */}
-                        <PaginationComponent/>
+                        {/* <PaginationComponent/> */}
                     </div>
                 </div>
             </div>

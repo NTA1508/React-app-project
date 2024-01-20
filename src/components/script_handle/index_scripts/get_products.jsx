@@ -46,9 +46,6 @@ const TodaysProducts = () => {
             <button className="product-tl__button" type="button">
               <i className='bx bx-heart'></i>
             </button>
-            <button className="product-tl__button product-button__eye" type="button">
-              <a href='/detail' style={{ color: "black" }}><i className="bi bi-eye"></i></a>
-            </button>
           </div>
         </div>
       );

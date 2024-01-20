@@ -94,7 +94,7 @@ class Home extends Component {
               <div className="section-title">This Month</div>
               <div className="todays-title month-title">
                 <DaysLeftInMonth />
-                <a href="#" class="section-link">View All</a>
+                <a href="/month_sale" class="section-link">View All</a>
               </div>
               <MonthList />
             </section>

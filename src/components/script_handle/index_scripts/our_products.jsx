@@ -5,7 +5,6 @@ const OurProducts = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    // Lấy dữ liệu từ API hoặc nguồn dữ liệu động khác
     axios.get('http://localhost:3001/getProducts')
       .then(response => setProducts(response.data))
       .catch(error => console.error(error));
@@ -33,20 +32,35 @@ const OurProducts = () => {
           <h4 className="product-name webkit-text">{products.product_name}</h4>
         </a>
         <div className="product-price">
-          <span id="price-new">${products.price - products.price * products.sales / 100}</span>
-          <span id="price-old">${products.price}</span>
+          {products.sale_type === "no" ? (
+            <>
+              <span id="price-new">${products.price}</span>
+            </>
+          ) : (
+            <>
+              <span id="price-new">${products.price - products.price * products.sales / 100}</span>
+              <span id="price-old">${products.price}</span>
+            </>
+          )}
+
+
         </div>
         <div className="product-action">
-          <i className='bx bx-map-pin'></i>
+          <i className="bx bx-map-pin" />
           <span>{products.storage_address}</span>
         </div>
-        <div className="discount">-{products.sales}%</div>
+        {products.sale_type === "no" ? (
+          <>
+            <span></span>
+          </>
+        ) : (
+          <>
+            <div className="discount">-{products.sales}%</div>
+          </>
+        )}
         <div className="product-tools">
           <button className="product-tl__button" type="button">
             <i className='bx bx-heart'></i>
-          </button>
-          <button className="product-tl__button product-button__eye" type="button">
-            <a href='/detail' style={{ color: "black" }}><i className="bi bi-eye"></i></a>
           </button>
         </div>
       </div>

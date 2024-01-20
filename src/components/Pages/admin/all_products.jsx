@@ -49,7 +49,7 @@ const AllProducts = () => {
                     <td className="cart-text">{product.stock_number}</td>
                     <td className="cart-text">${product.price}</td>
                     <td className="cart-text">{product.sales}%</td>
-                    <td className="cart-text">{product.promotion_type}</td>
+                    <td className="cart-text">{product.sale_type}</td>
                     <td className="cart-text">{product.storage_address}</td>
                     <td>
                       <a href="#">

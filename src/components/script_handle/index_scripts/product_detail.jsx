@@ -16,7 +16,6 @@ const ChangeImage = () => {
     const [products, setProduct] = useState(null);
   
     useEffect(() => {
-      // Fetch the product details from the server
       axios.get(`http://localhost:3001/getProducts/${id}`)
         .then(response => setProduct(response.data))
         .catch(error => console.error('Error fetching product details:', error));
