@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import {Link, NavLink } from "react-router-dom";
 import axios from 'axios';
 
 export default function Header() {
@@ -7,9 +7,25 @@ export default function Header() {
     const [activeNavItem, setActiveNavItem] = useState(null);
     const accountButtonRef = useRef(null);
     const mdAccountRef = useRef(null);
+    
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [products, setProducts] = useState([]);
+
+    const [user, setUser] = useState(false)
+    const [id , setId] = useState()
+    const [isAdmin, setAdmin] = useState(false)
+    
+    useEffect(()=>{
+        const token = JSON.parse(localStorage.getItem("token"));
+        axios.get('http://localhost:3001/user/' + token)
+        .then(result => {
+            console.log(result.data)
+            setId(result.data.id)
+            setAdmin(result.data.isAdmin)
+        })
+        .catch(err => console.log(err))
+    },[])
 
     useEffect(() => {
         const handleDocumentClick = (event) => {
@@ -36,6 +52,14 @@ export default function Header() {
             .catch(err => console.log(err))
     }, []);
 
+    useEffect(()=>{
+        if(localStorage.getItem("token") == null){
+            console.log('sdasdsad')
+        }else{
+            setUser(true)
+        }
+    },[])
+
     const handleAccountButtonClick = (event) => {
         event.stopPropagation();
         setIsMdAccountVisible((prev) => !prev);
@@ -56,6 +80,12 @@ export default function Header() {
 
         setSearchResults(filteredProducts);
     }, [searchQuery, products]);
+
+    const handleLogOut = () => {
+        localStorage.removeItem("token")
+        window.location.replace('/')
+    }
+
     return (
         <>
             <header>
@@ -98,6 +128,7 @@ export default function Header() {
                                 to="/login"
                                 className={`sidebar-item ${activeNavItem === 'login' ? 'active' : ''}`}
                                 onClick={() => handleNavItemClick('login')}
+                                style={{display: user? "none" :  ""}}
                             >
                                 Login
                             </NavLink>
@@ -105,6 +136,7 @@ export default function Header() {
                                 to="/admin"
                                 className={`sidebar-item ${activeNavItem === 'admin' ? 'active' : ''}`}
                                 onClick={() => handleNavItemClick('admin')}
+                                style={{display: isAdmin? "" :  "none"}}
                             >
                                 Admin
                             </NavLink>
@@ -172,23 +204,24 @@ export default function Header() {
                             <div
                                 class="tools-item account"
                                 id="account" onClick={handleAccountButtonClick} ref={accountButtonRef}
+                                style={{display: user ? "" : "none"}}
                             >
                                 <i className="bx bx-user" />
                                 <div className="md-account" id="md-account"
                                     style={{ display: isMdAccountVisible ? 'block' : 'none' }}
                                     ref={mdAccountRef}>
-                                    <a href="/profile">
+                                    <Link to={`/profile/${id}`}>
                                         <i className="bx bx-user" />
                                         <span>Manage My Account</span>
-                                    </a>
-                                    <a href="/order">
+                                    </Link>
+                                    <Link to={'/order'}>
                                         <i className="bx bxs-shopping-bags" />
                                         <span>My Order</span>
-                                    </a>
-                                    <a href="#">
+                                    </Link>
+                                    <Link onClick={handleLogOut}>
                                         <i className="bx bx-log-out" />
                                         <span>Logout</span>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

@@ -1,14 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AllProducts = () => {
-  const [products, setProducts] = useState([]);
-
+  const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:3001/getProducts')
-      .then(response => setProducts(response.data))
-      .catch(err => console.log(err))
+    axios
+      .get("http://localhost:3001/products")
+      .then((result) => {
+        console.log(result);
+        setData(result.data);
+      })
+      .catch((err) => console.log(err));
   }, []);
+
+  const handleDelete = (id) => {
+    axios
+      .delete("http://localhost:3001/products/delete/" + id)
+      .then((res) => {
+        window.location.reload();
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div className="container">
@@ -16,7 +29,7 @@ const AllProducts = () => {
         <div className="wishlist-nav">
           <div className="contact-title">
             <div className="contact-fix">
-              <a href="/admin">Home</a>
+              <Link to="/admin">Admin</Link>
               &nbsp;/&nbsp;
               <p>All products</p>
             </div>
@@ -32,13 +45,13 @@ const AllProducts = () => {
                   <th>Stock</th>
                   <th>Price</th>
                   <th>Sale</th>
-                  <th>Promotion type</th>
+                  <th>Sale type</th>
                   <th>Storage address</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-                {products.map(product => (
+                {data.map((product) => (
                   <tr key={product._id}>
                     <td className="cart-text">{product._id}</td>
                     <td className="cart-img">
@@ -47,17 +60,17 @@ const AllProducts = () => {
                     <td className="cart-text">{product.product_name}</td>
                     <td className="cart-text">{product.type}</td>
                     <td className="cart-text">{product.stock_number}</td>
-                    <td className="cart-text">${product.price}</td>
-                    <td className="cart-text">{product.sales}%</td>
+                    <td className="cart-text">{product.price}</td>
+                    <td className="cart-text">{product.sales}</td>
                     <td className="cart-text">{product.sale_type}</td>
                     <td className="cart-text">{product.storage_address}</td>
                     <td>
-                      <a href="#">
+                      <Link onClick={(e) => handleDelete(product._id)}>
                         <i className="bi bi-trash3" />
-                      </a>
-                      <a href="/edit_product" style={{ marginLeft: "10px" }}>
+                      </Link>
+                      <Link to={`/edit_product/${product._id}`} style={{ marginLeft: "10px" }}>
                         <i className="bi bi-pencil-square" />
-                      </a>
+                      </Link>
                     </td>
                   </tr>
                 ))}
