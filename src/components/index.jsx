@@ -50,7 +50,7 @@ export default function Index() {
                 <Route path="/detail/:id" element={<ProductDetail />}></Route>
                 <Route path="/wishlist" element={<WishList />}></Route>
                 <Route path="/products" element={<ProductCate />}></Route>
-                <Route path="/profile" element={<Profile />}></Route>
+                <Route path="/profile/:id" element={<Profile />}></Route>
                 <Route path="/login" element={<Login />}></Route>
                 <Route path="/register" element={<Register />}></Route>
                 <Route path="/order" element={<MyOrder />}></Route>
@@ -59,7 +59,7 @@ export default function Index() {
                 <Route path="/oders_list" element={<OrdersList />}></Route>
                 <Route path="/message" element={<Message />}></Route>
                 <Route path="/add_product" element={<AddProduct />}></Route>
-                <Route path="/edit_product" element={<EditProduct />}></Route>
+                <Route path="/edit_product/:id" element={<EditProduct />}></Route>
                 <Route path="/mobiles" element={<Mobile />}></Route>
                 <Route path="/laptops" element={<Laptops />}></Route>
                 <Route path="/tv" element={<TV />}></Route>
@@ -69,7 +69,7 @@ export default function Index() {
                 <Route path="/printers" element={<Printers />}></Route>
                 <Route path="/smart" element={<Smart />}></Route>
                 <Route path="/day_sale" element={<TodaySalePage />}></Route>
-                <Route path="/month_sale" element={<MonthSalePage />}></Route>
+                <Route path="/month_sale" element={<MonthSalePage />}></Route>              
             </Routes>
             <Footer />
         </Router>

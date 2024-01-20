@@ -16,7 +16,7 @@ function Profile() {
     setEdit(!edit);
   };
   useEffect(() => {
-    axios.get("http://localhost:3001/getUser/" + id).then((result) => {
+    axios.get("https://web-shopping.onrender.com/getUser/" + id).then((result) => {
       // console.log(result)
       setFirstName(result.data.firstName)
       setLastName(result.data.lastName)
@@ -27,7 +27,7 @@ function Profile() {
   const Update = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:3001/updateUser/" + id, {
+      .put("https://web-shopping.onrender.com/updateUser/" + id, {
         firstName,
         lastName,
         email,

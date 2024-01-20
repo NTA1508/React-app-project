@@ -14,7 +14,7 @@ export default function Register() {
   const Submit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/register", {
+      .post("https://web-shopping.onrender.com/register", {
         firstName,
         lastName,
         email,
@@ -37,13 +37,15 @@ export default function Register() {
               <h1>Create an account</h1>
               <div className="form-box">
                 <input
-                  className="form-input1"
+                  className="form-input"
                   type="text"
                   placeholder="First name"
                   onChange={(e) => setFirstName(e.target.value)}
                 />
+              </div>
+              <div className="form-box">
                 <input
-                  className="form-input2"
+                  className="form-input"
                   type="text"
                   placeholder="Last name"
                   onChange={(e) => setLastName(e.target.value)}

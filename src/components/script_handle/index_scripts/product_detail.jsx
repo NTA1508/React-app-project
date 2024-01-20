@@ -16,7 +16,7 @@ const ChangeImage = () => {
     const [products, setProduct] = useState(null);
   
     useEffect(() => {
-      axios.get(`http://localhost:3001/getProducts/${id}`)
+      axios.get(`https://web-shopping.onrender.com/products/${id}`)
         .then(response => setProduct(response.data))
         .catch(error => console.error('Error fetching product details:', error));
     }, [id]);

@@ -47,7 +47,7 @@ export default function Header() {
     }, []);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/getProducts')
+        axios.get('https://web-shopping.onrender.com/products')
             .then(response => setProducts(response.data))
             .catch(err => console.log(err))
     }, []);
@@ -186,14 +186,14 @@ export default function Header() {
                                 )}
                             </div>
                             <a href="/wishlist">
-                                <div className="tools-item">
+                                <div className="tools-item" style={{display: user ? "" : "none"}}>
                                     <i className="bx bx-heart" />
                                     <span className="number-icon" id="heart-number">
                                         0
                                     </span>
                                 </div>
                             </a>
-                            <a href="/cart">
+                            <a href="/cart" style={{display: user ? "" : "none"}}>
                                 <div className="tools-item">
                                     <i className="bx bx-cart-alt" />
                                     <span className="number-icon" id="cart-number">

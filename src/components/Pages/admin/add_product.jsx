@@ -13,17 +13,38 @@ export default function AddProduct() {
   const [promotionType, setPromotionType] = useState();
   const [storageAddress, setStorageAddress] = useState();
   const [stock, setStock] = useState();
+  const [successMessage, setSuccessMessage] = useState("");
 
   const Submit = (e) => {
     e.preventDefault();
-    console.log({productType, stock, storageAddress})
     axios
-      .post("http://localhost:3001/products/create", {
-        productName, image, productType, description, price, sales, promotionType, storageAddress, stock
+      .post("https://web-shopping.onrender.com/products/create", {
+        productName,
+        image,
+        productType,
+        description,
+        price,
+        sales,
+        promotionType,
+        storageAddress,
+        stock,
       })
       .then((result) => {
         console.log(result);
-        navigate('/all_products')
+        setSuccessMessage("Product added successfully!");
+        // Reset form fields and success message after a delay
+        setTimeout(() => {
+          setProductName("");
+          setImage("");
+          setProductType("");
+          setDescription("");
+          setPrice("");
+          setSales("");
+          setPromotionType("");
+          setStorageAddress("");
+          setStock("");
+          setSuccessMessage("");
+        }, 5000);
       })
       .catch((err) => console.log(err));
   };
@@ -32,6 +53,7 @@ export default function AddProduct() {
     const file = e.target.files[0];
     TransformFile(file);
   };
+
   const TransformFile = (file) => {
     const reader = new FileReader();
     if (file) {
@@ -140,6 +162,7 @@ export default function AddProduct() {
               id="exampleInputPassword1"
               style={{ width: "100%", padding: 8, boxSizing: "border-box" }}
               min="0"
+              max="100"
               onChange={(e) => setSales(e.target.value)}
             />
           </div>
@@ -209,6 +232,11 @@ export default function AddProduct() {
               accept="Downloads/*"
             />
           </div>
+          {successMessage && (
+            <div style={{ color: "green", marginTop: 10, textAlign:"center" }}>
+              {successMessage}
+            </div>
+          )}
           <div>
             <button
               type="submit"

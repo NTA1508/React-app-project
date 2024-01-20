@@ -9,7 +9,7 @@ export default function Printers() {
     const [productsPerPage] = useState(12);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/getProducts')
+        axios.get('https://web-shopping.onrender.com/products')
             .then(response => setProducts(response.data))
             .catch(err => console.log(err))
     }, []);

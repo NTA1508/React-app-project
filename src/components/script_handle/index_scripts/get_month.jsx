@@ -5,7 +5,7 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/getProducts')
+    axios.get('https://web-shopping.onrender.com/products')
       .then(response => setProducts(response.data))
       .catch(error => console.error(error));
   }, []);

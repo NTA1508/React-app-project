@@ -11,7 +11,7 @@ const ProductDetail = () => {
   
     useEffect(() => {
       // Fetch the product details from the server
-      axios.get(`http://localhost:3001/getProducts/${id}`)
+      axios.get(`https://web-shopping.onrender.com/products/${id}`)
         .then(response => setProduct(response.data))
         .catch(error => console.error('Error fetching product details:', error));
     }, [id]);
