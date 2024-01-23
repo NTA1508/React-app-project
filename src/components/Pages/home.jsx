@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
-import CountdownTimer from '../script_handle/index_scripts/countdowntimer';
-import ToDaySlide from '../script_handle/index_scripts/today_slide';
-import HeroSlide from '../script_handle/index_scripts/hero_slide';
-import MonthList from '../script_handle/index_scripts/get_month';
-import OurProducts from '../script_handle/index_scripts/our_products';
-import feature1 from "../../assets/image/featured-1.png"
-import feature2 from "../../assets/image/featured-2.png"
-import feature3 from "../../assets/image/featured-3.png"
-import feature4 from "../../assets/image/featured-4.png"
-import deliveryImg from "../../assets/image/icon-delivery.png"
-import customImg from "../../assets/image/Icon-customer_service.png"
-import secureImg from "../../assets/image/Icon-secure.png"
-import DaysLeftInMonth from '../script_handle/index_scripts/dayleft';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import CountdownTimer from "../script_handle/index_scripts/countdowntimer";
+import ToDaySlide from "../script_handle/index_scripts/today_slide";
+import HeroSlide from "../script_handle/index_scripts/hero_slide";
+import MonthList from "../script_handle/index_scripts/get_month";
+import OurProducts from "../script_handle/index_scripts/our_products";
+import feature1 from "../../assets/image/featured-1.png";
+import feature2 from "../../assets/image/featured-2.png";
+import feature3 from "../../assets/image/featured-3.png";
+import feature4 from "../../assets/image/featured-4.png";
+import deliveryImg from "../../assets/image/icon-delivery.png";
+import customImg from "../../assets/image/Icon-customer_service.png";
+import secureImg from "../../assets/image/Icon-secure.png";
+import DaysLeftInMonth from "../script_handle/index_scripts/dayleft";
 class Home extends Component {
   render() {
     return (
@@ -23,65 +24,65 @@ class Home extends Component {
               <div className="category">
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="/products">
+                    <Link to="/products">
                       <p>All products</p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="/mobiles">
+                    <Link to="/mobiles">
                       <p>Mobile phones</p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="/laptops">
+                    <Link to="/laptops">
                       <p>Laptops and Tablets</p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="/tv">
+                    <Link to="/tv">
                       <p>Televisions and Monitors</p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="/audios">
+                    <Link to="/audios">
                       <p>Audio and Headphones</p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="/cameras">
+                    <Link to="/cameras">
                       <p>Cameras and Camcorders</p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="/consoles">
+                    <Link to="/consoles">
                       <p>Game consoles</p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="/printers">
+                    <Link to="/printers">
                       <p>Printers and Scanners</p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="category-item">
                   <div className="menu-title">
-                    <a href="/smart">
+                    <Link to="/smart">
                       <p>Smart home appliances</p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -94,7 +95,9 @@ class Home extends Component {
               <div className="section-title">This Month</div>
               <div className="todays-title month-title">
                 <DaysLeftInMonth />
-                <a href="/month_sale" class="section-link">View All</a>
+                <a href="/month_sale" class="section-link">
+                  View All
+                </a>
               </div>
               <MonthList />
             </section>
@@ -122,11 +125,7 @@ class Home extends Component {
               </div>
               <div className="featured-wrap">
                 <div className="featured-left">
-                  <img
-                    src={feature1}
-                    alt=""
-                    className="featured-img"
-                  />
+                  <img src={feature1} alt="" className="featured-img" />
                   <div className="featured-text">
                     <h2>PlayStation 5</h2>
                     <p>Black and White version of the PS5 coming out on sale.</p>
@@ -135,11 +134,7 @@ class Home extends Component {
                 </div>
                 <div className="featured-right">
                   <div className="featured-item">
-                    <img
-                      src={feature2}
-                      alt=""
-                      className="featured-img"
-                    />
+                    <img src={feature2} alt="" className="featured-img" />
                     <div className="featured-text">
                       <h2>Women's Collections</h2>
                       <p>Featured woman collections that give you another vibe.</p>
@@ -148,11 +143,7 @@ class Home extends Component {
                   </div>
                   <div className="featured-box">
                     <div className="featured-vid">
-                      <img
-                        src={feature3}
-                        alt=""
-                        className="featured-img"
-                      />
+                      <img src={feature3} alt="" className="featured-img" />
                       <div className="featured-text">
                         <h2>Speakers</h2>
                         <p>Amazon wireless speakers</p>
@@ -160,11 +151,7 @@ class Home extends Component {
                       </div>
                     </div>
                     <div className="featured-vid">
-                      <img
-                        src={feature4}
-                        alt=""
-                        className="featured-img"
-                      />
+                      <img src={feature4} alt="" className="featured-img" />
                       <div className="featured-text">
                         <h2>Perfume</h2>
                         <p>GUCCI INTENSE OUD EDP</p>

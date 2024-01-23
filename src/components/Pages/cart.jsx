@@ -1,22 +1,42 @@
 import { useCallback, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { useCartContext } from "../../store/useCartContext";
 
 export default function Cart() {
   const { cartProduct, setCartProduct } = useCartContext();
+  const [totalCost, setTotalCost] = useState(0);
 
   const handleOnChangeQuantity = useCallback(
     (id, value) => {
-      // console.log(newData);
-      // setCartProduct((prev) => {
-      //   const newData = cartProduct.filter((item) => {
-      //     item.quantity = value;
-      //     return item.id === id;
-      //   });
-      //   return [...newData];
-      // });
+      const newData = cartProduct.map((item) => (item._id === id ? { ...item, quantity: value * 1 } : item));
+      setCartProduct(newData);
+
+      // Tính toán và cập nhật tổng giá trị
+      const newTotal = newData.reduce((total, item) => total + item.price * item.quantity, 0);
+      setTotalCost(newTotal);
     },
-    [cartProduct, setCartProduct]
+    [cartProduct, setCartProduct, setTotalCost]
   );
+  const handleRemoveFromCart = useCallback(
+    (id) => {
+      const newData = cartProduct.filter((item) => item._id !== id);
+      setCartProduct(newData);
+
+      // Tính toán và cập nhật tổng giá trị
+      const newTotal = newData.reduce((total, item) => total + item.price * item.quantity, 0);
+      setTotalCost(newTotal);
+    },
+    [cartProduct, setCartProduct, setTotalCost]
+  );
+  const handleRemoveAllFromCart = useCallback(() => {
+    // Set cartProduct to an empty array to remove all items from the cart
+    setCartProduct([]);
+
+    // Cập nhật tổng giá trị thành 0 khi giỏ hàng trống
+    setTotalCost(0);
+  }, [setCartProduct, setTotalCost]);
+
+  console.log(cartProduct);
 
   return (
     <div className="container">
@@ -51,12 +71,13 @@ export default function Cart() {
                         <td className="cart-text webkit-text">{item.product_name}</td>
                         <td className="cart-text">${item.price}</td>
                         <td className="cart-adjust">
-                          <input type="number" min={1} value={item.quantity} onChange={(e) => handleOnChangeQuantity(item.id, e.target.value)} />
+                          <input type="number" min={1} value={item.quantity} onChange={(e) => handleOnChangeQuantity(item._id, e.target.value)} />
                         </td>
                         <td className="cart-text">${item.price * item.quantity}</td>
                         <td>
+                          {/* Remove cart */}
                           <a href="#">
-                            <button>
+                            <button onClick={() => handleRemoveFromCart(item._id)}>
                               <i className="bi bi-trash3" />
                             </button>
                           </a>
@@ -68,19 +89,19 @@ export default function Cart() {
             </table>
             <div className="cart-synthetic">
               <h4>
-                Total number of products: <span>2</span> product
+                Total number of products: <span>{cartProduct.length}</span> product
               </h4>
-              <button className="remove-all" type="button">
+              <button className="remove-all" type="button" onClick={handleRemoveAllFromCart}>
                 Remove all
               </button>
             </div>
             <div className="cart-pay">
               <div className="cart-pay__body">
                 <div className="cart-poin">
-                  <p>Total cost of goods:</p> <span>$240</span>
+                  <p>Total cost of goods:</p> <span>${totalCost}</span>
                 </div>
                 <div className="cart-poin">
-                  <p>Transport fee:</p> <span>$4</span>
+                  <p>Transport fee:</p> <span>{}</span>
                 </div>
                 <div className="cart-poin">
                   <p>Discount code (if any):</p> <span>$0</span>
@@ -93,11 +114,11 @@ export default function Cart() {
                 <p>
                   Pressing 'Place Order' implies that you agree to comply with <a>Exclusive's Terms and Conditions.</a>
                 </p>
-                <a href="/checkout">
+                <Link to="/checkout">
                   <button className="order-cart" type="button">
                     Proceed to payment
                   </button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
