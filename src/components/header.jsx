@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
+import { useCartContext } from "../store/useCartContext";
 
 export default function Header() {
   const [isMdAccountVisible, setIsMdAccountVisible] = useState(false);
@@ -10,6 +11,7 @@ export default function Header() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [products, setProducts] = useState([]);
+  const { cartProduct } = useCartContext();
 
   useEffect(() => {
     const handleDocumentClick = (event) => {
@@ -120,18 +122,12 @@ export default function Header() {
                 )}
               </div>
               <a href="/wishlist">
-                <div className="tools-item">
-                  <i className="bx bx-heart" />
-                  <span className="number-icon" id="heart-number">
-                    0
-                  </span>
-                </div>
               </a>
               <Link to="/cart">
                 <div className="tools-item">
                   <i className="bx bx-cart-alt" />
                   <span className="number-icon" id="cart-number">
-                    0
+                    {cartProduct.length}
                   </span>
                 </div>
               </Link>

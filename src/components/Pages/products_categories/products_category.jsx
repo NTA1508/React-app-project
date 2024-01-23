@@ -1,6 +1,5 @@
 import PaginationComponent from "../../script_handle/index_scripts/whishlist_pagechange";
-import { useCartContext } from "../../../store/useCartContext";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, NavLink, redirect } from "react-router-dom";
 
@@ -8,7 +7,6 @@ export default function ProductCate() {
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(12);
-  const { cartProduct, setCartProduct } = useCartContext();
 
   useEffect(() => {
     axios
@@ -20,14 +18,6 @@ export default function ProductCate() {
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
-
-  const Add = useCallback(
-    (product) => {
-      const cart = { ...product, quantity: 1 };
-      setCartProduct((prev) => [...prev, cart]);
-    },
-    [setCartProduct]
-  );
 
   return (
     <div className="container">
@@ -115,14 +105,7 @@ export default function ProductCate() {
                     <Link to={`/detail/${products._id}`}>
                       <img src={products.product_image} alt="product-img" />
                     </Link>
-                    <button
-                      style={{ zIndex: "9999" }}
-                      className="add-cart"
-                      type="button"
-                      onClick={() => {
-                        Add(products);
-                      }}
-                    >
+                    <button style={{ zIndex: "9999" }} className="add-cart" type="button">
                       Add To Cart
                     </button>
                   </div>
