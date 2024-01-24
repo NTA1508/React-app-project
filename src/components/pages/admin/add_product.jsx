@@ -1,6 +1,6 @@
 import axios from "axios";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 export default function AddProduct() {
   const navigate = useNavigate()
@@ -13,17 +13,38 @@ export default function AddProduct() {
   const [promotionType, setPromotionType] = useState();
   const [storageAddress, setStorageAddress] = useState();
   const [stock, setStock] = useState();
+  const [successMessage, setSuccessMessage] = useState("");
 
   const Submit = (e) => {
     e.preventDefault();
-    console.log({productType, stock, storageAddress})
     axios
-      .post("https://web-shopping.onrender.com/products/create", {
-        productName, image, productType, description, price, sales, promotionType, storageAddress, stock
+      .post("https://web-shopping-exclusive.onrender.com/products/create", {
+        productName,
+        image,
+        productType,
+        description,
+        price,
+        sales,
+        promotionType,
+        storageAddress,
+        stock,
       })
       .then((result) => {
         console.log(result);
-        window.location.replace('/admin')
+        setSuccessMessage("Product added successfully!");
+        // Reset form fields and success message after a delay
+        setTimeout(() => {
+          setProductName("");
+          setImage("");
+          setProductType("");
+          setDescription("");
+          setPrice("");
+          setSales("");
+          setPromotionType("");
+          setStorageAddress("");
+          setStock("");
+          setSuccessMessage("");
+        }, 5000);
       })
       .catch((err) => console.log(err));
   };
@@ -32,6 +53,7 @@ export default function AddProduct() {
     const file = e.target.files[0];
     TransformFile(file);
   };
+
   const TransformFile = (file) => {
     const reader = new FileReader();
     if (file) {
@@ -49,7 +71,7 @@ export default function AddProduct() {
       <div className="wrapper">
         <div className="contact-title">
           <div className="contact-fix">
-            <Link to="/admin">Home</Link>
+            <a href="/admin">Home</a>
             &nbsp;/&nbsp;
             <p>Add product</p>
           </div>
@@ -89,8 +111,7 @@ export default function AddProduct() {
               style={{ width: "100%", padding: 8, boxSizing: "border-box" }}
               onChange={(e) => setProductType(e.target.value)}
             >
-              <option selected>Chọn loại hàng</option>
-              <option value={"phones"} >Mobile phones</option>
+              <option value={"phones"} selected>Mobile phones</option>
               <option value={"laptops"}>Laptops and Tablets</option>
               <option value={"tv"}>Televisions and Monitors</option>
               <option value={"audios"}>Audio and Headphones</option>
@@ -141,6 +162,7 @@ export default function AddProduct() {
               id="exampleInputPassword1"
               style={{ width: "100%", padding: 8, boxSizing: "border-box" }}
               min="0"
+              max="100"
               onChange={(e) => setSales(e.target.value)}
             />
           </div>
@@ -162,7 +184,6 @@ export default function AddProduct() {
               style={{ width: "100%", padding: 8, boxSizing: "border-box" }}
               onChange={(e) => setPromotionType(e.target.value)}
             >
-              <option selected>Chọn loại hàng</option>
               <option value={"no"}>No</option>
               <option value={"day"}>Day</option>
               <option value={"month"}>Month</option>
@@ -211,6 +232,11 @@ export default function AddProduct() {
               accept="Downloads/*"
             />
           </div>
+          {successMessage && (
+            <div style={{ color: "green", marginTop: 10, textAlign:"center" }}>
+              {successMessage}
+            </div>
+          )}
           <div>
             <button
               type="submit"

@@ -1,54 +1,70 @@
 import ChangeImage from "../script_handle/index_scripts/product_detail";
 import ProductIncrement from "../script_handle/index_scripts/product_increment";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
-export default function ProductDetail() {
+
+const ProductDetail = () => {
+    const { id } = useParams();
+    const [products, setProduct] = useState(null);
+  
+    useEffect(() => {
+      // Fetch the product details from the server
+      axios.get(`https://web-shopping.onrender.com/products/${id}`)
+        .then(response => setProduct(response.data))
+        .catch(error => console.error('Error fetching product details:', error));
+    }, [id]);
+  
+    if (!products) {
+      return <div>Loading...</div>;
+    }
     return (
-            <div className="container">
-                <div className="wrapper">
-                    <div className="wishlist-nav">
-                        <div className="contact-title">
-                            <div className="contact-fix">
-                                <a href="/home">Home</a>
-                                &nbsp;/&nbsp;
-                                <p>HAVIT HV-G92 Gamepad</p>
-                            </div>
+        <div className="container">
+            <div className="wrapper">
+                <div className="wishlist-nav">
+                    <div className="contact-title">
+                        <div className="contact-fix">
+                            <a href="/home">Home</a>
+                            &nbsp;/&nbsp;
+                            <p>{products.product_name}</p>
                         </div>
-                        <div className="product-wrap">
-                            <ChangeImage/>
-                            <div className="product-content">
-                                <h2>HAVIT HV-G92 Gamepad</h2>
-                                <nav className="pro-nav-st">
-                                    <div className="product-ct-star">
-                                        <i className="bi bi-star-fill" />
-                                        <i className="bi bi-star-fill" />
-                                        <i className="bi bi-star-fill" />
-                                        <i className="bi bi-star-fill" />
-                                        <i className="bi bi-star-fill" />
-                                    </div>
-                                    <span>|</span>
-                                    <p>in stock</p>
-                                </nav>
-                                <h1>$120</h1>
-                                <p>
-                                    PlayStation 5 Controller Skin High quality vinyl with air channel
-                                    adhesive for easy bubble free install &amp; mess free removal
-                                    Pressure sensitive.
-                                </p>
-                                <hr />
-                                <div className="product-nb">
-                                    <nav>
-                                        <ProductIncrement/>
-                                        <a href="#">
-                                            <button className="pro-btn" type="button">
-                                                Buy Now
-                                            </button>
-                                        </a>
-                                    </nav>
+                    </div>
+                    <div className="product-wrap">
+                        <ChangeImage />
+                        <div className="product-content">
+                            <h2>{products.product_name}</h2>
+                            <nav className="pro-nav-st">
+                                <div className="product-ct-star">
+                                    <i className="bi bi-star-fill" />
+                                    <i className="bi bi-star-fill" />
+                                    <i className="bi bi-star-fill" />
+                                    <i className="bi bi-star-fill" />
+                                    <i className="bi bi-star-fill" />
                                 </div>
+                                <span>|</span>
+                                <p>in stock: {products.stock_number}</p>
+                            </nav>
+                            <h1>${products.price}</h1>
+                            <p>
+                               {products.deciption}
+                            </p>
+                            <hr />
+                            <div className="product-nb">
+                                <nav>
+                                    <ProductIncrement maxIncrement={products.stock_number} />
+                                    <a href="#">
+                                        <button className="pro-btn" type="button">
+                                            Buy Now
+                                        </button>
+                                    </a>
+                                </nav>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     )
 }
+export default ProductDetail

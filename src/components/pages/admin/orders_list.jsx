@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const OrdersList = () => {
   return (
@@ -29,9 +29,7 @@ const OrdersList = () => {
                 <tr>
                   <td className="cart-text">1</td>
                   <td className="cart-text">Nguyen Tuan Anh</td>
-                  <td className="cart-text">
-                    54, Van Tien Dung, Hoa Xuan, Cam Le, Da Nang
-                  </td>
+                  <td className="cart-text">54, Van Tien Dung, Hoa Xuan, Cam Le, Da Nang</td>
                   <td className="cart-text">0124567893</td>
                   <td className="cart-text">Playstation 5 DualSense Edge</td>
                   <td className="cart-text">2</td>

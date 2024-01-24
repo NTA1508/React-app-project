@@ -14,7 +14,7 @@ export default function Register() {
   const Submit = (e) => {
     e.preventDefault();
     axios
-      .post("https://web-shopping.onrender.com/register", {
+      .post("http://localhost:3001/register", {
         firstName,
         lastName,
         email,
@@ -36,35 +36,14 @@ export default function Register() {
             <form className="form-control" onSubmit={Submit}>
               <h1>Create an account</h1>
               <div className="form-box">
-                <input
-                  className="form-input1"
-                  type="text"
-                  placeholder="First name"
-                  onChange={(e) => setFirstName(e.target.value)}
-                />
-                <input
-                  className="form-input2"
-                  type="text"
-                  placeholder="Last name"
-                  onChange={(e) => setLastName(e.target.value)}
-                />
+                <input className="form-input1" type="text" placeholder="First name" onChange={(e) => setFirstName(e.target.value)} />
+                <input className="form-input2" type="text" placeholder="Last name" onChange={(e) => setLastName(e.target.value)} />
               </div>
               <div className="form-box">
-                <input
-                  className="form-input"
-                  type="email"
-                  placeholder="Email"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
+                <input className="form-input" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
               </div>
               <div className="form-box">
-                <input
-                  className="form-input"
-                  type="password"
-                  placeholder="Password"
-                  id="passwordField"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
+                <input className="form-input" type="password" placeholder="Password" id="passwordField" onChange={(e) => setPassword(e.target.value)} />
                 <i id="togglePassword" onClick={togglePasswordVisibility}>
                   <img id="togglePassword" src={showImage} alt="showButton" />
                 </i>

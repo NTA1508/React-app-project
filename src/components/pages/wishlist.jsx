@@ -1,6 +1,13 @@
 import PaginationComponent from "../script_handle/index_scripts/whishlist_pagechange";
+import React, { useEffect, useState } from 'react';
 
 export default function WishList() {
+    const [wishNumber, setWishNumber] = useState(0);
+    useEffect(() => {
+        const wishlistItems = document.querySelectorAll('.wishlist-list .product-item');
+    
+        setWishNumber(wishlistItems.length);
+      }, []); 
     return (
         <div className="container">
             <div className="wrapper">
@@ -216,7 +223,7 @@ export default function WishList() {
                             </div>
                         </div>
                         {/* pagination - phân trang */}
-                        <PaginationComponent/>
+                        {/* <PaginationComponent/> */}
                     </div>
                 </div>
             </div>

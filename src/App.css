@@ -238,7 +238,7 @@ header {
     min-height: 100px;
     height: auto;
     padding: 0 .5rem .5rem .5rem;
-    display: none;
+    
 }
 
 .search-title {
@@ -438,7 +438,12 @@ header {
     border-right: 1px solid var(--ball-color);
     overflow-y: scroll;
 }
-
+.category-product {
+    width: 20%;
+    height: 100%;
+    border-right: 1px solid var(--ball-color);
+    /* overflow-y: scroll; */
+  }
 .category::-webkit-scrollbar {
     display: none;
 }
@@ -450,7 +455,13 @@ header {
     line-height: 50px;
     cursor: pointer;
 }
-
+.category-item-product {
+    display: block;
+    width: 100%;
+    height: auto;
+    line-height: 50px;
+    cursor: pointer;
+  }
 .sub-menu {
     width: 100%;
     display: flex;
@@ -1027,26 +1038,10 @@ header {
 }
 
 .form-box {
-    display: flex;
     width: 100%;
     height: 40px;
     margin-bottom: 1rem;
     position: relative;
-}
-
-.form-input2{
-    margin-left: 10px;
-    width: 60%;
-    height: 100%;
-    border: none;
-    border-bottom: 2px solid var(--ball-color);
-}
-
-.form-input1 {
-    width: 40%;
-    height: 100%;
-    border: none;
-    border-bottom: 2px solid var(--ball-color);
 }
 
 .form-input {
@@ -2067,6 +2062,14 @@ header {
     height: 50px;
     text-align: right;
 }
+
+#cancel-button {
+    background: none;
+    color: var(--text-bland);
+    cursor: no-drop;
+}
+
+
 /*
     *** product ***
 */
@@ -2410,11 +2413,7 @@ footer {
     display: flex;
     align-items: center;
 }
-.contact-fix2{
-    width: 1100px;
-    justify-content: space-between;
-    display: flex;
-}
+
 .contact-title a {
     color: var(--text-gray);
     cursor: pointer;
@@ -2682,8 +2681,8 @@ footer {
 /*
     *** wishlist ***
 */
-.wishlist-nav {
-    width: 100%;
+.wishlist-nav-1 {
+    width: 99%;
     padding: 2rem 0;
 }
 
@@ -3414,10 +3413,6 @@ footer {
     color: grey;
 }
 
-.contact-form-txt i:hover{
-    color: var(--pink-hover);
-}
-
 #togglePassword {
     position: absolute;
     top: 50%;
@@ -3449,4 +3444,12 @@ footer {
     color: white;
   }
   
-  
+  .category-item.active {
+    color: red; /* Change this to the desired text color */
+  }
+  .admin_card_hover{
+    transition: 0.3s;
+  }
+  .admin_card_hover:hover {
+    background-color: rgb(230, 229, 229);
+  }

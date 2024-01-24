@@ -1,6 +1,6 @@
+import banner from "../../../assets/image/banner.png"
 import React, { Component, useEffect, useState } from 'react';
 const CountdownTimer = () => {
-  // State for countdown values
   const [days, setDays] = useState('00');
   const [hours, setHours] = useState('00');
   const [minutes, setMinutes] = useState('00');
@@ -49,7 +49,7 @@ const CountdownTimer = () => {
   return (
     <section className="section banner">
       <div className="banner-img">
-        <img src="https://deep-image.ai/blog/content/images/2022/09/2-2.png" alt="banner-img" />
+        <img src={banner} alt="banner-img" />
       </div>
       <div className="banner-wrap">
         <h4>Categories</h4>

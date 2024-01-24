@@ -36,17 +36,17 @@ const HeroSlide = () => {
         <div className="swiper-wrapper">
           <div className="swiper-slide">
             <a href="#">
-              <img src="https://res.cloudinary.com/khoa123/image/upload/v1705568808/fwei1ckvlrzn4srmfvlp.png" alt="slide" />
+              <img src="https://d1hjkbq40fs2x4.cloudfront.net/2017-08-21/files/landscape-photography_1645.jpg" alt="slide" />
             </a>
           </div>
           <div className="swiper-slide">
             <a href="#">
-              <img src="https://res.cloudinary.com/khoa123/image/upload/v1705568808/fwei1ckvlrzn4srmfvlp.png" alt="slide" />
+              <img src="https://toquoc.mediacdn.vn/280518851207290880/2022/12/22/1-1671683430721237949162.jpg" alt="slide" />
             </a>
           </div>
           <div className="swiper-slide">
             <a href="#">
-              <img src="https://res.cloudinary.com/khoa123/image/upload/v1705568808/fwei1ckvlrzn4srmfvlp.png" alt="slide" />
+              <img src="https://toquoc.mediacdn.vn/280518851207290880/2022/12/22/2-16716834307051333204158.jpg" alt="slide" />
             </a>
           </div>
         </div>

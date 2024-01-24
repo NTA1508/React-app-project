@@ -12,36 +12,42 @@ const MyOrder = () => {
               <p>My Order</p>
             </div>
           </div>
-          <table className="styled-table">
-            <thead>
-              <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Image</th>
-                <th scope="col">Name</th>
-                <th scope="col">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="cart-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Oder ID</th>
+                  <th>Product picture</th>
+                  <th>Name product</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="cart-text">1</td>
+                  <td className="cart-img">
+                    <img src="./assets/images/product-1a.png" alt="img" />
+                  </td>
+                  <td className="cart-text">HAVIT HV-G92 Gamepad</td>
+                  <td className="cart-text">$160</td>
+                  <td className="cart-text">$160</td>
+                  <td className="cart-text">Accept</td>
+                </tr>
+                <tr>
+                  <td className="cart-text">1</td>
+                  <td className="cart-img">
+                    <img src="./assets/images/product-1a.png" alt="img" />
+                  </td>
+                  <td className="cart-text">HAVIT HV-G92 Gamepad</td>
+                  <td className="cart-text">$160</td>
+                  <td className="cart-text">$160</td>
+                  <td className="cart-text">Accept</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

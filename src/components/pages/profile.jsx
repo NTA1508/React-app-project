@@ -1,56 +1,54 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams} from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 function Profile() {
-  const {id} = useParams();
+  const { id } = useParams();
   const [edit, setEdit] = useState(false);
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [email, setEmail] = useState();
   const [address, setAddress] = useState();
   // const [avata, setAvata] = useState("");
-  const [currentpass, setCurrentPass] = useState('');
-  const [newpass, setNewPass] = useState('');
+  const [currentpass, setCurrentPass] = useState("");
+  const [newpass, setNewPass] = useState("");
 
   const check = () => {
     setEdit(!edit);
   };
   useEffect(() => {
-    axios.get("https://web-shopping.onrender.com/getUser/" + id).then((result) => {
+    axios.get("http://localhost:3001/getUser/" + id).then((result) => {
       // console.log(result)
-      setFirstName(result.data.firstName)
-      setLastName(result.data.lastName)
-      setEmail(result.data.email)
-      setAddress(result.data.address)
+      setFirstName(result.data.firstName);
+      setLastName(result.data.lastName);
+      setEmail(result.data.email);
+      setAddress(result.data.address);
     });
   }, []);
   const Update = (e) => {
     e.preventDefault();
     axios
-      .put("https://web-shopping.onrender.com/updateUser/" + id, {
+      .put("http://localhost:3001/updateUser/" + id, {
         firstName,
         lastName,
         email,
         address,
         currentpass,
-        newpass
+        newpass,
       })
       .then((result) => {
         console.log(result);
-        if(result.status === 200){
+        if (result.status === 200) {
           window.location.reload();
-        }else if (result.status === 201){
-          alert("Đổi mật khẩu thành công")
-          window.location.reload()
-        }
-        else if (result.status === 202){
-          alert("Chưa nhập mật khẩu mới")
-        }
-        else if (result.status === 203){
-          alert("Mật khẩu hiện tại không đúng")
+        } else if (result.status === 201) {
+          alert("Đổi mật khẩu thành công");
+          window.location.reload();
+        } else if (result.status === 202) {
+          alert("Chưa nhập mật khẩu mới");
+        } else if (result.status === 203) {
+          alert("Mật khẩu hiện tại không đúng");
         }
       })
-      .catch((err)=> console.log(err));
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -65,7 +63,7 @@ function Profile() {
               </div>
               <div className="contact-fix2">
                 <p>My Account</p>&#160;
-                <p style={{float: "right"}}>Wellcome {firstName + lastName}</p>
+                <p style={{ float: "right" }}>Wellcome {firstName + lastName}</p>
               </div>
             </div>
           </div>
@@ -81,49 +79,21 @@ function Profile() {
               <div className="account-group">
                 <div className="account-form">
                   <label>First Name</label>
-                  <input
-                    className="contact-input"
-                    id="account-input"
-                    type="text"
-                    value={firstName}
-                    disabled={edit === false}
-                    onChange={(e) => setFirstName(e.target.value)}
-                  />
+                  <input className="contact-input" id="account-input" type="text" value={firstName} disabled={edit === false} onChange={(e) => setFirstName(e.target.value)} />
                 </div>
                 <div className="account-form">
                   <label>Last Name</label>
-                  <input
-                    className="contact-input"
-                    id="account-input"
-                    type="text"
-                    value={lastName}
-                    disabled={edit === false}
-                    onChange={(e) => setLastName(e.target.value)}
-                  />
+                  <input className="contact-input" id="account-input" type="text" value={lastName} disabled={edit === false} onChange={(e) => setLastName(e.target.value)} />
                 </div>
               </div>
               <div className="account-group">
                 <div className="account-form">
                   <label>Email</label>
-                  <input
-                    className="contact-input"
-                    id="account-input"
-                    type="text"
-                    value={email}
-                    disabled={edit === false}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
+                  <input className="contact-input" id="account-input" type="text" value={email} disabled={edit === false} onChange={(e) => setEmail(e.target.value)} />
                 </div>
                 <div className="account-form">
                   <label>Address</label>
-                  <input
-                    className="contact-input"
-                    id="account-input"
-                    type="text"
-                    value={address}
-                    disabled={edit === false}
-                    onChange={(e) => setAddress(e.target.value)}
-                  />
+                  <input className="contact-input" id="account-input" type="text" value={address} disabled={edit === false} onChange={(e) => setAddress(e.target.value)} />
                 </div>
               </div>
               <div className="account-form">
@@ -152,19 +122,10 @@ function Profile() {
               <div className="account-button">
                 {edit === true && (
                   <>
-                    <button
-                      className="contact-button"
-                      id="cancel-button"
-                      type="button"
-                      onClick={() => window.location.reload()}
-                    >
+                    <button className="contact-button" id="cancel-button" type="button" onClick={() => window.location.reload()}>
                       Cancel
                     </button>
-                    <button
-                      className="contact-button"
-                      id="save-button"
-                      type="submit"
-                    >
+                    <button className="contact-button" id="save-button" type="submit">
                       Save changes
                     </button>
                   </>

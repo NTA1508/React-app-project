@@ -1,3 +1,4 @@
+import bank from "../../assets/image/bank.png"
 export default function CheckOut() {
     return (
         <div className="container">
@@ -78,7 +79,7 @@ export default function CheckOut() {
                                         <input type="checkbox" />
                                         <span>Bank</span>
                                     </strong>
-                                    <img src="./assets/images/bank.png" alt="img" />
+                                    <img src={bank} alt="img" />
                                 </nav>
                                 <nav>
                                     <nav>

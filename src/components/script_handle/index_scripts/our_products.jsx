@@ -1,47 +1,70 @@
-import React from 'react';
-import product from '../../data/data';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const OurProducts = () => {
-  const productsArray = Array.isArray(product) ? product : [];
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://web-shopping.onrender.com/products')
+      .then(response => setProducts(response.data))
+      .catch(error => console.error(error));
+  }, []);
+
+  const productsArray = Array.isArray(products) ? products : [];
 
   const productDivs = [];
   let productChildren = [];
   let count = 0;
 
-  productsArray.forEach((item, index) => {
+  productsArray.forEach((products, index) => {
     if (count === 0) {
       productChildren = [];
     }
     const productItem = (
-      <div key={item.id} className="product-item">
-        <a href="/detail">
+      <div key={products.id} className="product-item">
+        <a href={`/detail/${products._id}`}>
           <div className="product-item__img">
-            <img src={`${item.images.imageOne}`} alt="product-img" />
+            <img src={products.product_image} alt="product-img" />
             <button className="add-cart" type="button">
               Add To Cart
             </button>
           </div>
-          <h4 className="product-name webkit-text">{item.name}</h4>
+          <h4 className="product-name webkit-text">{products.product_name}</h4>
         </a>
         <div className="product-price">
-          <span id="price-new">${item.priceNew}</span>
-          <span id="price-old">${item.priceOld}</span>
+          {products.sale_type === "no" ? (
+            <>
+              <span id="price-new">${products.price}</span>
+            </>
+          ) : (
+            <>
+              <span id="price-new">${products.price - products.price * products.sales / 100}</span>
+              <span id="price-old">${products.price}</span>
+            </>
+          )}
+
+
         </div>
         <div className="product-action">
-          <i className='bx bx-map-pin'></i>
-          <span>{item.address}</span>
+          <i className="bx bx-map-pin" />
+          <span>{products.storage_address}</span>
         </div>
-        <div className="discount">{item.discountSale}</div>
+        {products.sale_type === "no" ? (
+          <>
+            <span></span>
+          </>
+        ) : (
+          <>
+            <div className="discount">-{products.sales}%</div>
+          </>
+        )}
         <div className="product-tools">
           <button className="product-tl__button" type="button">
             <i className='bx bx-heart'></i>
           </button>
-          <button className="product-tl__button product-button__eye" type="button">
-            <a href='/detail' style={{color:"black"}}><i className="bi bi-eye"></i></a>
-          </button>
         </div>
       </div>
-      
+
     );
     productChildren.push(productItem);
 

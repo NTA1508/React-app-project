@@ -1,4 +1,32 @@
+import axios from "axios"
+import { useState, useEffect } from "react"
+
 export default function Contact() {
+    const [email, setEmail] = useState()
+    const [name, setName] = useState()
+    const [phone, setPhone] = useState()
+    const [message, setMessage] = useState()
+
+    useEffect(()=>{
+        const token = JSON.parse(localStorage.getItem("token"));
+        axios.get('https://web-shopping-exclusive.onrender.com/user/' + token)
+        .then(result => {
+            console.log(result.data)
+            setEmail(result.data.email)
+            setName(`${result.data.firstName} ${result.data.lastName}`)
+        })
+        .catch(err => console.log(err))
+    },[])
+
+    const Submit = (e) => {
+        e.preventDefault();
+        axios.post('https://web-shopping-exclusive.onrender.com/Createfeedback',{email, name, phone, message})
+        .then(() => {
+            alert('Feedback thành công')
+            window.location.reload();
+        })
+        .catch(err => console.log(err))
+    }
     return (
         <div className="container">
             <div className="wrapper">
@@ -34,34 +62,37 @@ export default function Contact() {
                                 <p>Emails: support@exclusive.com</p>
                             </div>
                         </div>
-                        <form accept="" method="" className="contact-form">
+                        <form onClick={Submit} className="contact-form">
                             <div className="contact-group">
                                 <input
                                     className="contact-input"
                                     type="text"
-                                    name=""
+                                    value={name}
                                     placeholder="Your Name *"
+                                    onChange={(e) => setName(e.target.value)}
                                 />
                                 <input
                                     className="contact-input"
                                     type="text"
-                                    name=""
+                                    value={email}
                                     placeholder="Your Email *"
+                                    onChange={(e) => setEmail(e.target.value)}
                                 />
                                 <input
                                     className="contact-input"
                                     type="text"
-                                    name=""
+                                    value={phone}
                                     placeholder="Your Phone *"
+                                    onChange={(e) => setPhone(e.target.value)}
                                 />
                             </div>
                             <textarea
                                 className="contact-textarea"
-                                name=""
                                 cols={30}
                                 rows={10}
                                 placeholder="Your Massage"
-                                defaultValue={""}
+                                defaultValue={message}
+                                onChange={(e) => setMessage(e.target.value)}
                             />
                             <div className="contact-submit">
                                 <button type="submit" className="contact-button">

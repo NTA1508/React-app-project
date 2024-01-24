@@ -1,3 +1,4 @@
+import frameImg from '../assets/image/frame.png'
 export default function Footer() {
   return (
     <>
@@ -28,7 +29,7 @@ export default function Footer() {
           </div>
           <div className="footer-top__item">
             <h3>Download App</h3>
-            <img src="../assets/image/frame.png" alt="" />
+            <img src={frameImg} alt="" />
             <ul>
               <li>
                 <a href="#">

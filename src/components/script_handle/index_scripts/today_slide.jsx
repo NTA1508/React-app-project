@@ -41,7 +41,7 @@ const ToDaySlide = () => {
         </div>
       </div>
       <div className="section-button">
-        <button>View All Products</button>
+        <a href='/day_sale'><button>View All Products</button></a>
       </div>
     </section>
   );

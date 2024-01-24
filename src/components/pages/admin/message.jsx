@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Message = () => {
   return (
@@ -36,9 +36,7 @@ const Message = () => {
                   <td className="cart-text">Nguyen Huu Hiep</td>
                   <td className="cart-text">soicodoc@gmail.com</td>
                   <td className="cart-text">0123456789</td>
-                  <td className="cart-text">
-                    San pham tuyet voi toi rat thich
-                  </td>
+                  <td className="cart-text">San pham tuyet voi toi rat thich</td>
                 </tr>
               </tbody>
             </table>
